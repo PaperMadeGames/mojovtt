@@ -10,8 +10,8 @@ import * as Trait from "../../documents/actor/trait.mjs";
  */
 export default class TraitSelector extends DocumentSheet {
   constructor(actor, trait, options) {
-    if ( !CONFIG.DND5E.traits[trait] ) throw new Error(
-      `Cannot instantiate TraitSelector with a trait not defined in CONFIG.DND5E.traits: ${trait}.`
+    if ( !CONFIG.MOJO.traits[trait] ) throw new Error(
+      `Cannot instantiate TraitSelector with a trait not defined in CONFIG.MOJO.traits: ${trait}.`
     );
     if ( ["saves", "skills"].includes(trait) ) throw new Error(
       `TraitSelector does not support selection of ${trait}. That should be handled through `
@@ -33,8 +33,8 @@ export default class TraitSelector extends DocumentSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       id: "trait-selector",
-      classes: ["dnd5e", "trait-selector", "subconfig"],
-      template: "systems/dnd5e/templates/apps/trait-selector.hbs",
+      classes: ["mojo", "trait-selector", "subconfig"],
+      template: "systems/mojo/templates/apps/trait-selector.hbs",
       width: 320,
       height: "auto",
       sheetConfig: false,
@@ -68,7 +68,7 @@ export default class TraitSelector extends DocumentSheet {
       choices: await Trait.choices(this.trait, data.value),
       custom: data.custom,
       customPath: "custom" in data ? `${path}.custom` : null,
-      bypasses: "bypasses" in data ? Object.entries(CONFIG.DND5E.physicalWeaponProperties).reduce((obj, [k, v]) => {
+      bypasses: "bypasses" in data ? Object.entries(CONFIG.MOJO.physicalWeaponProperties).reduce((obj, [k, v]) => {
         obj[k] = { label: v, chosen: data.bypasses.has(k) };
         return obj;
       }, {}) : null,

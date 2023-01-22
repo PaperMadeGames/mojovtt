@@ -6,8 +6,8 @@ export default class ActorMovementConfig extends DocumentSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e"],
-      template: "systems/dnd5e/templates/apps/movement-config.hbs",
+      classes: ["mojo"],
+      template: "systems/mojo/templates/apps/movement-config.hbs",
       width: 300,
       height: "auto"
     });
@@ -17,7 +17,7 @@ export default class ActorMovementConfig extends DocumentSheet {
 
   /** @override */
   get title() {
-    return `${game.i18n.localize("DND5E.MovementConfig")}: ${this.document.name}`;
+    return `${game.i18n.localize("MOJO.MovementConfig")}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -35,15 +35,15 @@ export default class ActorMovementConfig extends DocumentSheet {
 
     // Allowed speeds
     const speeds = source.type === "group" ? {
-      land: "DND5E.MovementLand",
-      water: "DND5E.MovementWater",
-      air: "DND5E.MovementAir"
+      land: "MOJO.MovementLand",
+      water: "MOJO.MovementWater",
+      air: "MOJO.MovementAir"
     } : {
-      walk: "DND5E.MovementWalk",
-      burrow: "DND5E.MovementBurrow",
-      climb: "DND5E.MovementClimb",
-      fly: "DND5E.MovementFly",
-      swim: "DND5E.MovementSwim"
+      walk: "MOJO.MovementWalk",
+      burrow: "MOJO.MovementBurrow",
+      climb: "MOJO.MovementClimb",
+      fly: "MOJO.MovementFly",
+      swim: "MOJO.MovementSwim"
     };
 
     // Return rendering context
@@ -52,7 +52,7 @@ export default class ActorMovementConfig extends DocumentSheet {
       movement,
       selectUnits: source.type !== "group",
       canHover: source.type !== "group",
-      units: CONFIG.DND5E.movementUnits
+      units: CONFIG.MOJO.movementUnits
     };
   }
 }

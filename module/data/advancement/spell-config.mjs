@@ -3,12 +3,12 @@ import { FormulaField } from "../fields.mjs";
 export default class SpellConfigurationData extends foundry.abstract.DataModel {
   static defineSchema() {
     return {
-      ability: new foundry.data.fields.StringField({label: "DND5E.AbilityModifier"}),
-      preparation: new foundry.data.fields.StringField({label: "DND5E.SpellPreparationMode"}),
+      ability: new foundry.data.fields.StringField({label: "MOJO.AbilityModifier"}),
+      preparation: new foundry.data.fields.StringField({label: "MOJO.SpellPreparationMode"}),
       uses: new foundry.data.fields.SchemaField({
-        max: new FormulaField({deterministic: true, label: "DND5E.UsesMax"}),
-        per: new foundry.data.fields.StringField({label: "DND5E.UsesPeriod"})
-      }, {label: "DND5E.LimitedUses"})
+        max: new FormulaField({deterministic: true, label: "MOJO.UsesMax"}),
+        per: new foundry.data.fields.StringField({label: "MOJO.UsesPeriod"})
+      }, {label: "MOJO.LimitedUses"})
     };
   }
 

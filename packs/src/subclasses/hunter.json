@@ -17,7 +17,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.wrxIW5sDfmGr3u5s"
+            "Compendium.mojo.classfeatures.wrxIW5sDfmGr3u5s"
           ],
           "optional": false,
           "spell": {
@@ -38,7 +38,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.WgQrqjmeyMqDzVt3"
+            "Compendium.mojo.classfeatures.WgQrqjmeyMqDzVt3"
           ],
           "optional": false,
           "spell": {
@@ -59,7 +59,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.7zlTRRXT1vWSBGjX"
+            "Compendium.mojo.classfeatures.7zlTRRXT1vWSBGjX"
           ],
           "optional": false,
           "spell": {
@@ -80,7 +80,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.a0Sq88dgnREcIMfl"
+            "Compendium.mojo.classfeatures.a0Sq88dgnREcIMfl"
           ],
           "optional": false,
           "spell": {
@@ -111,11 +111,11 @@
   "flags": {},
   "_id": "uqd2q6WjVfcsaaGb",
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "mojo",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787234297,
     "modifiedTime": 1671220973544,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "mojobuilder0000"
   }
 }

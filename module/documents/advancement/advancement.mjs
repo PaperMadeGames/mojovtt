@@ -78,7 +78,7 @@ export default class Advancement extends BaseAdvancement {
     return {
       order: 100,
       icon: "icons/svg/upgrade.svg",
-      title: game.i18n.localize("DND5E.AdvancementTitle"),
+      title: game.i18n.localize("MOJO.AdvancementTitle"),
       hint: "",
       multiLevel: false,
       validItemTypes: new Set(["background", "class", "subclass"]),
@@ -319,7 +319,7 @@ export default class Advancement extends BaseAdvancement {
       `You are accessing the ${this.constructor.name}#data object which is no longer used. `
       + "Since 2.1 the Advancement class and its contained DataModel are merged into a combined data structure. "
       + "You should now reference keys which were previously contained within the data object directly.",
-      { since: "DnD5e 2.1", until: "DnD5e 2.2" }
+      { since: "Mojo 2.1", until: "Mojo 2.2" }
     );
     const data = {};
     for ( const k of this.schema.keys() ) {
@@ -349,7 +349,7 @@ export default class Advancement extends BaseAdvancement {
     if ( logWarning ) foundry.utils.logCompatibilityWarning(
       "An update being performed on an advancement points to `data`. Advancement data has moved to the top level so the"
       + " leading `data.` is no longer required.",
-      { since: "DnD5e 2.1", until: "DnD5e 2.2" }
+      { since: "Mojo 2.1", until: "Mojo 2.2" }
     );
     return updates;
   }

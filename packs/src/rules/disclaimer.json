@@ -10,7 +10,7 @@
       },
       "text": {
         "format": 1,
-        "content": "<blockquote>\n<p>This work was adapted from the <a href=\"https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf\">System Reference Document</a> under the OGL v1.0a (license available in the User Data/systems/dnd5e folder).</p>",
+        "content": "<blockquote>\n<p>This work was adapted from the <a href=\"https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf\">System Reference Document</a> under the OGL v1.0a (license available in the User Data/systems/mojo folder).</p>",
         "markdown": ""
       },
       "_id": "9iCIjvYzMdxWPtd1",
@@ -33,12 +33,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "mojo",
     "systemVersion": "2.0.2",
     "coreVersion": "10.285",
     "createdTime": 1660925148884,
     "modifiedTime": 1663018863337,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "mojobuilder0000"
   },
   "folder": null,
   "sort": 0,

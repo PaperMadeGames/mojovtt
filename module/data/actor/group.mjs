@@ -2,7 +2,7 @@ import SystemDataModel from "../abstract.mjs";
 import CurrencyTemplate from "../shared/currency.mjs";
 
 /**
- * A data model and API layer which handles the schema and functionality of "group" type Actors in the dnd5e system.
+ * A data model and API layer which handles the schema and functionality of "group" type Actors in the mojo system.
  * @mixes CurrencyTemplate
  *
  * @property {object} description
@@ -16,7 +16,7 @@ import CurrencyTemplate from "../shared/currency.mjs";
  * @property {number} attributes.movement.air    Base movement speed through the air.
  *
  * @example Create a new Group
- * const g = new dnd5e.documents.Actor5e({
+ * const g = new mojo.documents.Actor5e({
  *  type: "group",
  *  name: "Test Group",
  *  system: {
@@ -29,26 +29,26 @@ export default class GroupActor extends SystemDataModel.mixin(CurrencyTemplate) 
   static defineSchema() {
     return this.mergeSchema(super.defineSchema(), {
       description: new foundry.data.fields.SchemaField({
-        full: new foundry.data.fields.HTMLField({label: "DND5E.Description"}),
-        summary: new foundry.data.fields.HTMLField({label: "DND5E.DescriptionSummary"})
+        full: new foundry.data.fields.HTMLField({label: "MOJO.Description"}),
+        summary: new foundry.data.fields.HTMLField({label: "MOJO.DescriptionSummary"})
       }),
       members: new foundry.data.fields.SetField(
         new foundry.data.fields.ForeignDocumentField(foundry.documents.BaseActor, {idOnly: true}),
-        {label: "DND5E.GroupMembers"}
+        {label: "MOJO.GroupMembers"}
       ),
       attributes: new foundry.data.fields.SchemaField({
         movement: new foundry.data.fields.SchemaField({
           land: new foundry.data.fields.NumberField({
-            initial: 0, nullable: false, integer: true, min: 0, label: "DND5E.MovementLand"
+            initial: 0, nullable: false, integer: true, min: 0, label: "MOJO.MovementLand"
           }),
           water: new foundry.data.fields.NumberField({
-            initial: 0, nullable: false, integer: true, min: 0, label: "DND5E.MovementWater"
+            initial: 0, nullable: false, integer: true, min: 0, label: "MOJO.MovementWater"
           }),
           air: new foundry.data.fields.NumberField({
-            initial: 0, nullable: false, integer: true, min: 0, label: "DND5E.MovementAir"
+            initial: 0, nullable: false, integer: true, min: 0, label: "MOJO.MovementAir"
           })
         })
-      }, {label: "DND5E.Attributes"})
+      }, {label: "MOJO.Attributes"})
     });
   }
 

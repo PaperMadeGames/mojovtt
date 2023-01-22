@@ -1,6 +1,6 @@
 <div class="traits">
     <div class="form-group">
-        <label>{{localize "DND5E.Size"}}</label>
+        <label>{{localize "MOJO.Size"}}</label>
         <select class="actor-size" name="system.traits.size">
             {{#select system.traits.size}}
             {{#each config.actorSizes as |label size|}}
@@ -12,8 +12,8 @@
 
     {{#unless isVehicle}}
     <div class="form-group">
-        <label>{{localize "DND5E.Senses"}}</label>
-        <a class="config-button" data-action="senses" title="{{localize 'DND5E.SensesConfig'}}">
+        <label>{{localize "MOJO.Senses"}}</label>
+        <a class="config-button" data-action="senses" title="{{localize 'MOJO.SensesConfig'}}">
             <i class="fas fa-cog"></i>
         </a>
         <ul class="traits-list">
@@ -24,9 +24,9 @@
     </div>
 
     <div class="form-group {{traits.traits.languages.cssClass}}">
-        <label>{{localize "DND5E.Languages"}}</label>
+        <label>{{localize "MOJO.Languages"}}</label>
         <a class="trait-selector" data-trait="languages"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.Languages')}}" tabindex="0">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.Languages')}}" tabindex="0">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -38,9 +38,9 @@
     {{/unless}}
 
     <div class="form-group {{traits.traits.di.cssClass}}">
-        <label>{{localize "DND5E.DamImm"}}</label>
+        <label>{{localize "MOJO.DamImm"}}</label>
         <a class="trait-selector" data-trait="di"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.DamImm')}}" tabindex="0">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.DamImm')}}" tabindex="0">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -51,9 +51,9 @@
     </div>
 
     <div class="form-group {{traits.traits.dr.cssClass}}">
-        <label>{{localize "DND5E.DamRes"}}</label>
+        <label>{{localize "MOJO.DamRes"}}</label>
         <a class="trait-selector" data-trait="dr"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.DamRes')}}" tabindex="0">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.DamRes')}}" tabindex="0">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -64,9 +64,9 @@
     </div>
 
     <div class="form-group {{traits.traits.dv.cssClass}}">
-        <label>{{localize "DND5E.DamVuln"}}</label>
+        <label>{{localize "MOJO.DamVuln"}}</label>
         <a class="trait-selector" data-trait="dv"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.DamVuln')}}">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.DamVuln')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -77,9 +77,9 @@
     </div>
 
     <div class="form-group {{traits.traits.ci.cssClass}}">
-        <label>{{localize "DND5E.ConImm"}}</label>
+        <label>{{localize "MOJO.ConImm"}}</label>
         <a class="trait-selector" data-trait="ci"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.ConImm')}}">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.ConImm')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -91,9 +91,9 @@
 
     {{#if isCharacter}}
     <div class="form-group {{traits.traits.weaponProf.cssClass}}">
-        <label>{{localize "DND5E.TraitWeaponProf"}}</label>
+        <label>{{localize "MOJO.TraitWeaponProf"}}</label>
         <a class="trait-selector" data-trait="weapon"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.TraitWeaponProf')}}">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.TraitWeaponProf')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -104,9 +104,9 @@
     </div>
 
     <div class="form-group {{traits.traits.armorProf.cssClass}}">
-        <label>{{localize "DND5E.TraitArmorProf"}}</label>
+        <label>{{localize "MOJO.TraitArmorProf"}}</label>
         <a class="trait-selector" data-trait="armor"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.TraitArmorProf')}}">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.TraitArmorProf')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -117,9 +117,9 @@
     </div>
 
     <div class="form-group {{traits.traits.toolProf.cssClass}}">
-        <label>{{localize "DND5E.TraitToolProf"}}</label>
+        <label>{{localize "MOJO.TraitToolProf"}}</label>
         <a class="trait-selector" data-trait="tool"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.TraitToolProf')}}">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.TraitToolProf')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -132,9 +132,9 @@
 
     {{#unless isVehicle}}
     <div class="form-group ">
-        <label>{{localize "DND5E.SpecialTraits"}}</label>
+        <label>{{localize "MOJO.SpecialTraits"}}</label>
         <a class="config-button" data-action="flags"
-           title="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.SpecialTraits')}}">
+           title="{{localize 'MOJO.TraitConfig' trait=(localize 'MOJO.SpecialTraits')}}">
             <i class="fas fa-cog"></i>
         </a>
     </div>

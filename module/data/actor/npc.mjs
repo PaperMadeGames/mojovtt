@@ -54,68 +54,68 @@ export default class NPCData extends CreatureTemplate {
         ...AttributesFields.common,
         ...AttributesFields.creature,
         ac: new foundry.data.fields.SchemaField({
-          flat: new foundry.data.fields.NumberField({integer: true, min: 0, label: "DND5E.ArmorClassFlat"}),
-          calc: new foundry.data.fields.StringField({initial: "default", label: "DND5E.ArmorClassCalculation"}),
-          formula: new FormulaField({deterministic: true, label: "DND5E.ArmorClassFormula"})
-        }, {label: "DND5E.ArmorClass"}),
+          flat: new foundry.data.fields.NumberField({integer: true, min: 0, label: "MOJO.ArmorClassFlat"}),
+          calc: new foundry.data.fields.StringField({initial: "default", label: "MOJO.ArmorClassCalculation"}),
+          formula: new FormulaField({deterministic: true, label: "MOJO.ArmorClassFormula"})
+        }, {label: "MOJO.ArmorClass"}),
         hp: new foundry.data.fields.SchemaField({
           value: new foundry.data.fields.NumberField({
-            nullable: false, integer: true, min: 0, initial: 10, label: "DND5E.HitPointsCurrent"
+            nullable: false, integer: true, min: 0, initial: 10, label: "MOJO.HitPointsCurrent"
           }),
           max: new foundry.data.fields.NumberField({
-            nullable: false, integer: true, min: 0, initial: 10, label: "DND5E.HitPointsMax"
+            nullable: false, integer: true, min: 0, initial: 10, label: "MOJO.HitPointsMax"
           }),
-          temp: new foundry.data.fields.NumberField({integer: true, initial: 0, min: 0, label: "DND5E.HitPointsTemp"}),
-          tempmax: new foundry.data.fields.NumberField({integer: true, initial: 0, label: "DND5E.HitPointsTempMax"}),
-          formula: new FormulaField({required: true, label: "DND5E.HPFormula"})
-        }, {label: "DND5E.HitPoints"})
-      }, {label: "DND5E.Attributes"}),
+          temp: new foundry.data.fields.NumberField({integer: true, initial: 0, min: 0, label: "MOJO.HitPointsTemp"}),
+          tempmax: new foundry.data.fields.NumberField({integer: true, initial: 0, label: "MOJO.HitPointsTempMax"}),
+          formula: new FormulaField({required: true, label: "MOJO.HPFormula"})
+        }, {label: "MOJO.HitPoints"})
+      }, {label: "MOJO.Attributes"}),
       details: new foundry.data.fields.SchemaField({
         ...DetailsFields.common,
         ...DetailsFields.creature,
         type: new foundry.data.fields.SchemaField({
-          value: new foundry.data.fields.StringField({required: true, blank: true, label: "DND5E.CreatureType"}),
-          subtype: new foundry.data.fields.StringField({required: true, label: "DND5E.CreatureTypeSelectorSubtype"}),
-          swarm: new foundry.data.fields.StringField({required: true, blank: true, label: "DND5E.CreatureSwarmSize"}),
-          custom: new foundry.data.fields.StringField({required: true, label: "DND5E.CreatureTypeSelectorCustom"})
-        }, {label: "DND5E.CreatureType"}),
-        environment: new foundry.data.fields.StringField({required: true, label: "DND5E.Environment"}),
+          value: new foundry.data.fields.StringField({required: true, blank: true, label: "MOJO.CreatureType"}),
+          subtype: new foundry.data.fields.StringField({required: true, label: "MOJO.CreatureTypeSelectorSubtype"}),
+          swarm: new foundry.data.fields.StringField({required: true, blank: true, label: "MOJO.CreatureSwarmSize"}),
+          custom: new foundry.data.fields.StringField({required: true, label: "MOJO.CreatureTypeSelectorCustom"})
+        }, {label: "MOJO.CreatureType"}),
+        environment: new foundry.data.fields.StringField({required: true, label: "MOJO.Environment"}),
         cr: new foundry.data.fields.NumberField({
-          required: true, nullable: false, min: 0, initial: 1, label: "DND5E.ChallengeRating"
+          required: true, nullable: false, min: 0, initial: 1, label: "MOJO.ChallengeRating"
         }),
         spellLevel: new foundry.data.fields.NumberField({
-          required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.SpellcasterLevel"
+          required: true, nullable: false, integer: true, min: 0, initial: 0, label: "MOJO.SpellcasterLevel"
         }),
-        source: new foundry.data.fields.StringField({required: true, label: "DND5E.Source"})
-      }, {label: "DND5E.Details"}),
+        source: new foundry.data.fields.StringField({required: true, label: "MOJO.Source"})
+      }, {label: "MOJO.Details"}),
       resources: new foundry.data.fields.SchemaField({
         legact: new foundry.data.fields.SchemaField({
           value: new foundry.data.fields.NumberField({
-            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.LegActRemaining"
+            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "MOJO.LegActRemaining"
           }),
           max: new foundry.data.fields.NumberField({
-            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.LegActMax"
+            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "MOJO.LegActMax"
           })
-        }, {label: "DND5E.LegAct"}),
+        }, {label: "MOJO.LegAct"}),
         legres: new foundry.data.fields.SchemaField({
           value: new foundry.data.fields.NumberField({
-            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.LegResRemaining"
+            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "MOJO.LegResRemaining"
           }),
           max: new foundry.data.fields.NumberField({
-            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.LegResMax"
+            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "MOJO.LegResMax"
           })
-        }, {label: "DND5E.LegRes"}),
+        }, {label: "MOJO.LegRes"}),
         lair: new foundry.data.fields.SchemaField({
-          value: new foundry.data.fields.BooleanField({required: true, label: "DND5E.LairAct"}),
+          value: new foundry.data.fields.BooleanField({required: true, label: "MOJO.LairAct"}),
           initiative: new foundry.data.fields.NumberField({
-            required: true, integer: true, label: "DND5E.LairActionInitiative"
+            required: true, integer: true, label: "MOJO.LairActionInitiative"
           })
-        }, {label: "DND5E.LairActionLabel"})
-      }, {label: "DND5E.Resources"}),
+        }, {label: "MOJO.LairActionLabel"})
+      }, {label: "MOJO.Resources"}),
       traits: new foundry.data.fields.SchemaField({
         ...TraitsFields.common,
         ...TraitsFields.creature
-      }, {label: "DND5E.Traits"})
+      }, {label: "MOJO.Traits"})
     });
   }
 
@@ -152,7 +152,7 @@ export default class NPCData extends CreatureTemplate {
 
       // Match a known creature type
       const typeLc = match.groups.type.trim().toLowerCase();
-      const typeMatch = Object.entries(CONFIG.DND5E.creatureTypes).find(([k, v]) => {
+      const typeMatch = Object.entries(CONFIG.MOJO.creatureTypes).find(([k, v]) => {
         return (typeLc === k)
           || (typeLc === game.i18n.localize(v).toLowerCase())
           || (typeLc === game.i18n.localize(`${v}Pl`).toLowerCase());
@@ -167,7 +167,7 @@ export default class NPCData extends CreatureTemplate {
       // Match a swarm
       if ( match.groups.size ) {
         const sizeLc = match.groups.size ? match.groups.size.trim().toLowerCase() : "tiny";
-        const sizeMatch = Object.entries(CONFIG.DND5E.actorSizes).find(([k, v]) => {
+        const sizeMatch = Object.entries(CONFIG.MOJO.actorSizes).find(([k, v]) => {
           return (sizeLc === k) || (sizeLc === game.i18n.localize(v).toLowerCase());
         });
         source.type.swarm = sizeMatch ? sizeMatch[0] : "tiny";

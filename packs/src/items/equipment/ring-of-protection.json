@@ -113,7 +113,7 @@
       },
       "icon": "icons/equipment/finger/ring-cabochon-silver-gold-red.webp",
       "label": "+1 to AC",
-      "origin": "Compendium.dnd5e.items.QtmVEreNIWEVOoLR",
+      "origin": "Compendium.mojo.items.QtmVEreNIWEVOoLR",
       "transfer": true,
       "flags": {},
       "tint": null,
@@ -127,11 +127,11 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "mojo",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787233653,
     "modifiedTime": 1671220960501,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "mojobuilder0000"
   }
 }

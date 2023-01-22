@@ -589,7 +589,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.osLzOwQdPtrK3rQH"
+          "sourceId": "Compendium.mojo.items.osLzOwQdPtrK3rQH"
         }
       },
       "img": "icons/weapons/swords/sword-guard-brown.webp",
@@ -715,7 +715,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.3rCO8MTIdPGSW6IJ"
+          "sourceId": "Compendium.mojo.items.3rCO8MTIdPGSW6IJ"
         }
       },
       "img": "icons/weapons/ammunition/arrows-war-red.webp",
@@ -725,12 +725,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647459,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -816,12 +816,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647467,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -918,7 +918,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.gP1URGq3kVIIFHJ7"
+          "sourceId": "Compendium.mojo.items.gP1URGq3kVIIFHJ7"
         }
       },
       "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
@@ -1030,7 +1030,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.8RXjiddJ6VGyE7vB"
+          "sourceId": "Compendium.mojo.items.8RXjiddJ6VGyE7vB"
         }
       },
       "img": "icons/equipment/chest/shirt-collared-brown.webp",
@@ -1040,12 +1040,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640220,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1142,7 +1142,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.irtqrzaUCeshmTZp"
+          "sourceId": "Compendium.mojo.items.irtqrzaUCeshmTZp"
         }
       },
       "img": "icons/equipment/back/mantle-collared-black.webp",
@@ -1197,7 +1197,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.H8YCd689ezlD26aT"
+          "sourceId": "Compendium.mojo.items.H8YCd689ezlD26aT"
         }
       },
       "img": "icons/containers/bags/pack-simple-leather.webp",
@@ -1252,7 +1252,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.9bWTRRDym06PzSAf"
+          "sourceId": "Compendium.mojo.items.9bWTRRDym06PzSAf"
         }
       },
       "img": "icons/containers/bags/coinpouch-simple-tan.webp",
@@ -1262,12 +1262,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640234,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1347,7 +1347,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.f4w4GxBi0nYXmhX4"
+          "sourceId": "Compendium.mojo.items.f4w4GxBi0nYXmhX4"
         }
       },
       "img": "icons/consumables/meat/hock-leg-pink-brown.webp",
@@ -1357,12 +1357,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640246,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1442,7 +1442,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.Uv0ilmzbWvqmlCVH"
+          "sourceId": "Compendium.mojo.items.Uv0ilmzbWvqmlCVH"
         }
       },
       "img": "icons/sundries/survival/wetskin-leather-purple.webp",
@@ -1452,12 +1452,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640253,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1485,7 +1485,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.odV5cq2HSLSCH69k"
+          "sourceId": "Compendium.mojo.items.odV5cq2HSLSCH69k"
         }
       },
       "img": "icons/sundries/books/book-backed-silver-red.webp",
@@ -1528,7 +1528,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.3b0RvGi0TnTYpIxn"
+          "sourceId": "Compendium.mojo.items.3b0RvGi0TnTYpIxn"
         }
       },
       "img": "icons/commodities/wood/bamboo-brown.webp",
@@ -1538,12 +1538,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640262,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1571,7 +1571,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.V5UAjT3ed6sDNtgm"
+          "sourceId": "Compendium.mojo.items.V5UAjT3ed6sDNtgm"
         }
       },
       "img": "icons/tools/hand/pickaxe-steel-white.webp",
@@ -1614,7 +1614,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.14pNRT4sZy9rgvhb"
+          "sourceId": "Compendium.mojo.items.14pNRT4sZy9rgvhb"
         }
       },
       "img": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
@@ -1709,7 +1709,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.TqyvIglHDj5kfohR"
+          "sourceId": "Compendium.mojo.items.TqyvIglHDj5kfohR"
         }
       },
       "img": "icons/sundries/survival/stake-rough-simple-brown.webp",
@@ -1719,12 +1719,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647473,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1809,7 +1809,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.BnOCLuNWhVvzHLjl"
+          "sourceId": "Compendium.mojo.items.BnOCLuNWhVvzHLjl"
         }
       },
       "img": "icons/sundries/lights/torch-black.webp",
@@ -1819,12 +1819,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647480,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1852,7 +1852,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.DNOSEAvF4Oh1DlWy"
+          "sourceId": "Compendium.mojo.items.DNOSEAvF4Oh1DlWy"
         }
       },
       "img": "icons/sundries/lights/torch-black.webp",
@@ -1862,12 +1862,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640283,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1947,7 +1947,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.QXmaarJ4X8P0C1HV"
+          "sourceId": "Compendium.mojo.items.QXmaarJ4X8P0C1HV"
         }
       },
       "img": "icons/sundries/survival/rope-wrapped-brown.webp",
@@ -2039,7 +2039,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.108q5fJnnBRoLKfe"
+          "sourceId": "Compendium.mojo.monsterfeatures.108q5fJnnBRoLKfe"
         }
       },
       "img": "icons/skills/melee/unarmed-punch-fist.webp",
@@ -2131,7 +2131,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.races.LOMdcNAGWh5xpfm4"
+          "sourceId": "Compendium.mojo.races.LOMdcNAGWh5xpfm4"
         }
       },
       "img": "icons/sundries/gaming/dice-runed-brown.webp",
@@ -2223,7 +2223,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.races.GWPjKFeIthBBeCFJ"
+          "sourceId": "Compendium.mojo.races.GWPjKFeIthBBeCFJ"
         }
       },
       "img": "icons/magic/perception/silhouette-stealth-shadow.webp",
@@ -2315,7 +2315,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.races.PqxZgcJzp1VVgP8t"
+          "sourceId": "Compendium.mojo.races.PqxZgcJzp1VVgP8t"
         }
       },
       "img": "icons/skills/movement/feet-winged-boots-brown.webp",
@@ -2339,7 +2339,7 @@
       "type": "feat",
       "system": {
         "description": {
-          "value": "<div title=\"Page 5\">\n<div>\n<div>\n<p><em>As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others. </em></p>\n<em> </em>\n<p><em>Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life. </em></p><p><em><strong>Ability Score Increase.</strong></em> Your Charisma score increases by 1.</p><p><strong><em>Naturally Stealthy.</em></strong> @Compendium[dnd5e.races.GWPjKFeIthBBeCFJ]{Naturally Stealthy} You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</p>\n</div>\n</div>\n</div>",
+          "value": "<div title=\"Page 5\">\n<div>\n<div>\n<p><em>As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others. </em></p>\n<em> </em>\n<p><em>Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life. </em></p><p><em><strong>Ability Score Increase.</strong></em> Your Charisma score increases by 1.</p><p><strong><em>Naturally Stealthy.</em></strong> @Compendium[mojo.races.GWPjKFeIthBBeCFJ]{Naturally Stealthy} You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.</p>\n</div>\n</div>\n</div>",
           "chat": "",
           "unidentified": ""
         },
@@ -2427,7 +2427,7 @@
       "type": "feat",
       "system": {
         "description": {
-          "value": "<div title=\"Page 4\">\n<div>\n<div>\n<p><em>Your halfling character has a number of traits in common with all other halflings. </em></p><p><em><strong>Ability Score Increase.</strong></em> Your Dexterity score increases by 2.</p><p><em><strong>Age.</strong></em> A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.</p><p><em><strong>Alignment.</strong></em> Most halflings are lawful good. As a rule, they are good-­hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.</p><p><em><strong>Size.</strong></em> Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.</p><p><em><strong>Speed. </strong></em>Your base walking speed is 25 feet.</p><p><em><strong>Lucky.</strong></em> @Compendium[dnd5e.races.LOMdcNAGWh5xpfm4]{Lucky} When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p><p><em><strong>Brave.</strong></em> @Compendium[dnd5e.races.7Yoo9hG0hfPSmBoC]{Brave} You have advantage on saving throws against being frightened.</p>\n</div>\n</div>\n</div>\n<div title=\"Page 5\">\n<div>\n<div>\n<p><em><strong>Halfling Nimbleness.</strong></em> @Compendium[dnd5e.races.PqxZgcJzp1VVgP8t]{Halfling Nimbleness} You can move through the space of any creature that is of a size larger than yours.</p><p><em><strong>Languages.</strong></em> You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.</p>\n</div>\n</div>\n</div>",
+          "value": "<div title=\"Page 4\">\n<div>\n<div>\n<p><em>Your halfling character has a number of traits in common with all other halflings. </em></p><p><em><strong>Ability Score Increase.</strong></em> Your Dexterity score increases by 2.</p><p><em><strong>Age.</strong></em> A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.</p><p><em><strong>Alignment.</strong></em> Most halflings are lawful good. As a rule, they are good-­hearted and kind, hate to see others in pain, and have no tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their community and the comfort of their old ways.</p><p><em><strong>Size.</strong></em> Halflings average about 3 feet tall and weigh about 40 pounds. Your size is Small.</p><p><em><strong>Speed. </strong></em>Your base walking speed is 25 feet.</p><p><em><strong>Lucky.</strong></em> @Compendium[mojo.races.LOMdcNAGWh5xpfm4]{Lucky} When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.</p><p><em><strong>Brave.</strong></em> @Compendium[mojo.races.7Yoo9hG0hfPSmBoC]{Brave} You have advantage on saving throws against being frightened.</p>\n</div>\n</div>\n</div>\n<div title=\"Page 5\">\n<div>\n<div>\n<p><em><strong>Halfling Nimbleness.</strong></em> @Compendium[mojo.races.PqxZgcJzp1VVgP8t]{Halfling Nimbleness} You can move through the space of any creature that is of a size larger than yours.</p><p><em><strong>Languages.</strong></em> You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell or through which they are traveling.</p>\n</div>\n</div>\n</div>",
           "chat": "",
           "unidentified": ""
         },
@@ -2495,7 +2495,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.races.GH2dNne2bt1NjcJk"
+          "sourceId": "Compendium.mojo.races.GH2dNne2bt1NjcJk"
         }
       },
       "img": "icons/magic/lightning/bolt-forked-large-teal.webp",
@@ -2520,7 +2520,7 @@
       "img": "icons/magic/control/silhouette-hold-change-blue.webp",
       "system": {
         "description": {
-          "value": "<p>As a monk, you gain the following class features.</p>\n<h3>Hit Points</h3>\n<p><strong>Hit Dice:</strong> 1d8 per monk level<br /><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per monk level after 1st</p>\n<h3>Proficiencies</h3>\n<p><strong>Armor:</strong> None<br /><strong>Weapons:</strong> Simple weapons, shortswords<br /><strong>Tools:</strong> Choose one type of artisan's tools or one musical instrument<br /><strong>Saving Throws:</strong> Strength, Dexterity<br /><strong>Skills:</strong> Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth</p>\n<h3>Equipment</h3>\n<p>You start with the following equipment, in addition to the equipment granted by your background:</p>\n<ul>\n<li>(a) a shortsword or (b) any simple weapon</li>\n<li>(a) a dungeoneer's pack or (b) an explorer's pack</li>\n<li>10 darts</li>\n</ul>\n<h1>Monk Advancement</h1>\n<table>\n<thead>\n<tr>\n<td>Level</td>\n<td>Proficiency Bonus</td>\n<td>Martial Arts</td>\n<td>Ki Points</td>\n<td>Unarmored Movement</td>\n<td>Features</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+2</td>\n<td>1d4</td>\n<td>—</td>\n<td>—</td>\n<td>@Compendium[dnd5e.classfeatures.UAvV7N7T4zJhxdfI]{Unarmored Defense}, @Compendium[dnd5e.classfeatures.l50hjTxO2r0iecKw]{Martial Arts}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>1d4</td>\n<td>2</td>\n<td>+10 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.10b6z2W1txNkrGP7]{Ki}, @Compendium[dnd5e.classfeatures.7vSrGc0MP5Vzm9Ac]{Unarmored Movement}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>1d4</td>\n<td>3</td>\n<td>+10 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.rtpQdX77dYWbDIOH]{Monastic Tradition}, @Compendium[dnd5e.classfeatures.mzweVbnsJPQiVkAe]{Deflect Missiles}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>1d4</td>\n<td>4</td>\n<td>+10 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}, @Compendium[dnd5e.classfeatures.KQz9bqxVkXjDl8gK]{Slow Fall}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>5</td>\n<td>+10 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.XogoBnFWmCAHXppo]{Extra Attack}, @Compendium[dnd5e.classfeatures.pvRc6GAu1ok6zihC]{Stunning Strike}</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>6</td>\n<td>+15 ft.</td>\n<td>\n<p>@Compendium[dnd5e.classfeatures.7flZKruSSu6dHg6D]{Ki-Empowered Strikes},</p>\n<p>Monastic Tradition feature</p>\n</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>7</td>\n<td>+15 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.a4P4DNMmH8CqSNkC]{Evasion}, @Compendium[dnd5e.classfeatures.ZmC31XKS4YNENnoc]{Stillness of Mind}</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>8</td>\n<td>+15 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>1d6</td>\n<td>9</td>\n<td>+15 ft.</td>\n<td>Unarmored Movement improvement</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+4</td>\n<td>1d6</td>\n<td>10</td>\n<td>+20 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.bqWA7t9pDELbNRkp]{Purity of Body}</td>\n</tr>\n<tr>\n<td>11th</td>\n<td>+4</td>\n<td>1d8</td>\n<td>11</td>\n<td>+20 ft.</td>\n<td>Monastic Tradition feature</td>\n</tr>\n<tr>\n<td>12th</td>\n<td>+4</td>\n<td>1d8</td>\n<td>12</td>\n<td>+20 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>13th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>13</td>\n<td>+20 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.XjuGBeB8Y0C3A5D4]{Tongue of the Sun and Moon}</td>\n</tr>\n<tr>\n<td>14th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>14</td>\n<td>+25 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.7D2EkLdISwShEDlN]{Diamond Soul}</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>15</td>\n<td>+25 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.gDH8PMrKvLHaNmEI]{Timeless Body}</td>\n</tr>\n<tr>\n<td>16th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>16</td>\n<td>+25 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>17th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>17</td>\n<td>+25 ft.</td>\n<td>Monastic Tradition feature</td>\n</tr>\n<tr>\n<td>18th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>18</td>\n<td>+30 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.3jwFt3hSqDswBlOH]{Empty Body}</td>\n</tr>\n<tr>\n<td>19th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>19</td>\n<td>+30 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>20</td>\n<td>+30 ft.</td>\n<td>@Compendium[dnd5e.classfeatures.mQNPg89YIs7g5tG4]{Perfect Self}</td>\n</tr>\n</tbody>\n</table>\n<h1>Monastic Traditions</h1>\n<p>Three traditions of monastic pursuit are common in the monasteries scattered across the multiverse. Most monasteries practice one tradition exclusively, but a few honor the three traditions and instruct each monk according to his or her aptitude and interest. All three traditions rely on the same basic techniques, diverging as the student grows more adept. Thus, a monk need choose a tradition only upon reaching 3rd level.</p>\n<p>@Compendium[dnd5e.subclasses.IvlpKMXX3PmW1NY2]{Way of the Open Hand}</p>",
+          "value": "<p>As a monk, you gain the following class features.</p>\n<h3>Hit Points</h3>\n<p><strong>Hit Dice:</strong> 1d8 per monk level<br /><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per monk level after 1st</p>\n<h3>Proficiencies</h3>\n<p><strong>Armor:</strong> None<br /><strong>Weapons:</strong> Simple weapons, shortswords<br /><strong>Tools:</strong> Choose one type of artisan's tools or one musical instrument<br /><strong>Saving Throws:</strong> Strength, Dexterity<br /><strong>Skills:</strong> Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth</p>\n<h3>Equipment</h3>\n<p>You start with the following equipment, in addition to the equipment granted by your background:</p>\n<ul>\n<li>(a) a shortsword or (b) any simple weapon</li>\n<li>(a) a dungeoneer's pack or (b) an explorer's pack</li>\n<li>10 darts</li>\n</ul>\n<h1>Monk Advancement</h1>\n<table>\n<thead>\n<tr>\n<td>Level</td>\n<td>Proficiency Bonus</td>\n<td>Martial Arts</td>\n<td>Ki Points</td>\n<td>Unarmored Movement</td>\n<td>Features</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+2</td>\n<td>1d4</td>\n<td>—</td>\n<td>—</td>\n<td>@Compendium[mojo.classfeatures.UAvV7N7T4zJhxdfI]{Unarmored Defense}, @Compendium[mojo.classfeatures.l50hjTxO2r0iecKw]{Martial Arts}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>1d4</td>\n<td>2</td>\n<td>+10 ft.</td>\n<td>@Compendium[mojo.classfeatures.10b6z2W1txNkrGP7]{Ki}, @Compendium[mojo.classfeatures.7vSrGc0MP5Vzm9Ac]{Unarmored Movement}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>1d4</td>\n<td>3</td>\n<td>+10 ft.</td>\n<td>@Compendium[mojo.classfeatures.rtpQdX77dYWbDIOH]{Monastic Tradition}, @Compendium[mojo.classfeatures.mzweVbnsJPQiVkAe]{Deflect Missiles}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>1d4</td>\n<td>4</td>\n<td>+10 ft.</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}, @Compendium[mojo.classfeatures.KQz9bqxVkXjDl8gK]{Slow Fall}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>5</td>\n<td>+10 ft.</td>\n<td>@Compendium[mojo.classfeatures.XogoBnFWmCAHXppo]{Extra Attack}, @Compendium[mojo.classfeatures.pvRc6GAu1ok6zihC]{Stunning Strike}</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>6</td>\n<td>+15 ft.</td>\n<td>\n<p>@Compendium[mojo.classfeatures.7flZKruSSu6dHg6D]{Ki-Empowered Strikes},</p>\n<p>Monastic Tradition feature</p>\n</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>7</td>\n<td>+15 ft.</td>\n<td>@Compendium[mojo.classfeatures.a4P4DNMmH8CqSNkC]{Evasion}, @Compendium[mojo.classfeatures.ZmC31XKS4YNENnoc]{Stillness of Mind}</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+3</td>\n<td>1d6</td>\n<td>8</td>\n<td>+15 ft.</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>1d6</td>\n<td>9</td>\n<td>+15 ft.</td>\n<td>Unarmored Movement improvement</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+4</td>\n<td>1d6</td>\n<td>10</td>\n<td>+20 ft.</td>\n<td>@Compendium[mojo.classfeatures.bqWA7t9pDELbNRkp]{Purity of Body}</td>\n</tr>\n<tr>\n<td>11th</td>\n<td>+4</td>\n<td>1d8</td>\n<td>11</td>\n<td>+20 ft.</td>\n<td>Monastic Tradition feature</td>\n</tr>\n<tr>\n<td>12th</td>\n<td>+4</td>\n<td>1d8</td>\n<td>12</td>\n<td>+20 ft.</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>13th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>13</td>\n<td>+20 ft.</td>\n<td>@Compendium[mojo.classfeatures.XjuGBeB8Y0C3A5D4]{Tongue of the Sun and Moon}</td>\n</tr>\n<tr>\n<td>14th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>14</td>\n<td>+25 ft.</td>\n<td>@Compendium[mojo.classfeatures.7D2EkLdISwShEDlN]{Diamond Soul}</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>15</td>\n<td>+25 ft.</td>\n<td>@Compendium[mojo.classfeatures.gDH8PMrKvLHaNmEI]{Timeless Body}</td>\n</tr>\n<tr>\n<td>16th</td>\n<td>+5</td>\n<td>1d8</td>\n<td>16</td>\n<td>+25 ft.</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>17th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>17</td>\n<td>+25 ft.</td>\n<td>Monastic Tradition feature</td>\n</tr>\n<tr>\n<td>18th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>18</td>\n<td>+30 ft.</td>\n<td>@Compendium[mojo.classfeatures.3jwFt3hSqDswBlOH]{Empty Body}</td>\n</tr>\n<tr>\n<td>19th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>19</td>\n<td>+30 ft.</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>+6</td>\n<td>1d10</td>\n<td>20</td>\n<td>+30 ft.</td>\n<td>@Compendium[mojo.classfeatures.mQNPg89YIs7g5tG4]{Perfect Self}</td>\n</tr>\n</tbody>\n</table>\n<h1>Monastic Traditions</h1>\n<p>Three traditions of monastic pursuit are common in the monasteries scattered across the multiverse. Most monasteries practice one tradition exclusively, but a few honor the three traditions and instruct each monk according to his or her aptitude and interest. All three traditions rely on the same basic techniques, diverging as the student grows more adept. Thus, a monk need choose a tradition only upon reaching 3rd level.</p>\n<p>@Compendium[mojo.subclasses.IvlpKMXX3PmW1NY2]{Way of the Open Hand}</p>",
           "chat": "",
           "unidentified": ""
         },
@@ -2535,9 +2535,9 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.UAvV7N7T4zJhxdfI",
-                "Compendium.dnd5e.classfeatures.l50hjTxO2r0iecKw",
-                "Compendium.dnd5e.classfeatures.eGxoNmSMWKNzChCO"
+                "Compendium.mojo.classfeatures.UAvV7N7T4zJhxdfI",
+                "Compendium.mojo.classfeatures.l50hjTxO2r0iecKw",
+                "Compendium.mojo.classfeatures.eGxoNmSMWKNzChCO"
               ],
               "optional": false,
               "spell": {
@@ -2551,9 +2551,9 @@
             },
             "value": {
               "added": {
-                "1uoxnd96wfene89v": "Compendium.dnd5e.classfeatures.UAvV7N7T4zJhxdfI",
-                "u0xyqtglymya4tgv": "Compendium.dnd5e.classfeatures.l50hjTxO2r0iecKw",
-                "vgs7m7ktru46706k": "Compendium.dnd5e.classfeatures.eGxoNmSMWKNzChCO"
+                "1uoxnd96wfene89v": "Compendium.mojo.classfeatures.UAvV7N7T4zJhxdfI",
+                "u0xyqtglymya4tgv": "Compendium.mojo.classfeatures.l50hjTxO2r0iecKw",
+                "vgs7m7ktru46706k": "Compendium.mojo.classfeatures.eGxoNmSMWKNzChCO"
               }
             },
             "level": 1,
@@ -2564,11 +2564,11 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.10b6z2W1txNkrGP7",
-                "Compendium.dnd5e.classfeatures.5MwNlVZK7m6VolOH",
-                "Compendium.dnd5e.classfeatures.TDglPcxIVEzvVSgK",
-                "Compendium.dnd5e.classfeatures.yrSFIGTaQOH2PFRI",
-                "Compendium.dnd5e.classfeatures.zCeqyQ8uIPNdYJSW"
+                "Compendium.mojo.classfeatures.10b6z2W1txNkrGP7",
+                "Compendium.mojo.classfeatures.5MwNlVZK7m6VolOH",
+                "Compendium.mojo.classfeatures.TDglPcxIVEzvVSgK",
+                "Compendium.mojo.classfeatures.yrSFIGTaQOH2PFRI",
+                "Compendium.mojo.classfeatures.zCeqyQ8uIPNdYJSW"
               ],
               "optional": false,
               "spell": {
@@ -2589,8 +2589,8 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.rtpQdX77dYWbDIOH",
-                "Compendium.dnd5e.classfeatures.mzweVbnsJPQiVkAe"
+                "Compendium.mojo.classfeatures.rtpQdX77dYWbDIOH",
+                "Compendium.mojo.classfeatures.mzweVbnsJPQiVkAe"
               ],
               "optional": false,
               "spell": {
@@ -2611,7 +2611,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.KQz9bqxVkXjDl8gK"
+                "Compendium.mojo.classfeatures.KQz9bqxVkXjDl8gK"
               ],
               "optional": false,
               "spell": {
@@ -2632,8 +2632,8 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.XogoBnFWmCAHXppo",
-                "Compendium.dnd5e.classfeatures.pvRc6GAu1ok6zihC"
+                "Compendium.mojo.classfeatures.XogoBnFWmCAHXppo",
+                "Compendium.mojo.classfeatures.pvRc6GAu1ok6zihC"
               ],
               "optional": false,
               "spell": {
@@ -2654,7 +2654,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.7flZKruSSu6dHg6D"
+                "Compendium.mojo.classfeatures.7flZKruSSu6dHg6D"
               ],
               "optional": false,
               "spell": {
@@ -2675,8 +2675,8 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.a4P4DNMmH8CqSNkC",
-                "Compendium.dnd5e.classfeatures.ZmC31XKS4YNENnoc"
+                "Compendium.mojo.classfeatures.a4P4DNMmH8CqSNkC",
+                "Compendium.mojo.classfeatures.ZmC31XKS4YNENnoc"
               ],
               "optional": false,
               "spell": {
@@ -2697,7 +2697,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.bqWA7t9pDELbNRkp"
+                "Compendium.mojo.classfeatures.bqWA7t9pDELbNRkp"
               ],
               "optional": false,
               "spell": {
@@ -2718,7 +2718,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.XjuGBeB8Y0C3A5D4"
+                "Compendium.mojo.classfeatures.XjuGBeB8Y0C3A5D4"
               ],
               "optional": false,
               "spell": {
@@ -2739,7 +2739,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.7D2EkLdISwShEDlN"
+                "Compendium.mojo.classfeatures.7D2EkLdISwShEDlN"
               ],
               "optional": false,
               "spell": {
@@ -2760,7 +2760,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.gDH8PMrKvLHaNmEI"
+                "Compendium.mojo.classfeatures.gDH8PMrKvLHaNmEI"
               ],
               "optional": false,
               "spell": {
@@ -2781,7 +2781,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.3jwFt3hSqDswBlOH"
+                "Compendium.mojo.classfeatures.3jwFt3hSqDswBlOH"
               ],
               "optional": false,
               "spell": {
@@ -2802,7 +2802,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.mQNPg89YIs7g5tG4"
+                "Compendium.mojo.classfeatures.mQNPg89YIs7g5tG4"
               ],
               "optional": false,
               "spell": {
@@ -2918,7 +2918,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.classes.6VoZrWxhOEKGYhnq"
+          "sourceId": "Compendium.mojo.classes.6VoZrWxhOEKGYhnq"
         }
       },
       "_stats": {
@@ -3038,12 +3038,12 @@
         "default": 0
       },
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.UAvV7N7T4zJhxdfI",
+        "mojo": {
+          "sourceId": "Compendium.mojo.classfeatures.UAvV7N7T4zJhxdfI",
           "advancementOrigin": "nkdcq1w0tirh8oq1.lyabhwu4tbop4wh7"
         },
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.UAvV7N7T4zJhxdfI"
+          "sourceId": "Compendium.mojo.classfeatures.UAvV7N7T4zJhxdfI"
         }
       },
       "_stats": {
@@ -3134,12 +3134,12 @@
         "default": 0
       },
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.l50hjTxO2r0iecKw",
+        "mojo": {
+          "sourceId": "Compendium.mojo.classfeatures.l50hjTxO2r0iecKw",
           "advancementOrigin": "nkdcq1w0tirh8oq1.lyabhwu4tbop4wh7"
         },
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.l50hjTxO2r0iecKw"
+          "sourceId": "Compendium.mojo.classfeatures.l50hjTxO2r0iecKw"
         }
       },
       "_stats": {
@@ -3267,12 +3267,12 @@
         "default": 0
       },
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.eGxoNmSMWKNzChCO",
+        "mojo": {
+          "sourceId": "Compendium.mojo.classfeatures.eGxoNmSMWKNzChCO",
           "advancementOrigin": "nkdcq1w0tirh8oq1.lyabhwu4tbop4wh7"
         },
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.eGxoNmSMWKNzChCO"
+          "sourceId": "Compendium.mojo.classfeatures.eGxoNmSMWKNzChCO"
         }
       },
       "_stats": {
@@ -3305,12 +3305,12 @@
       },
       "flags": {},
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.1.0",
         "coreVersion": "10.291",
         "createdTime": 1673040183979,
         "modifiedTime": 1673040726622,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       },
       "_id": "q4tr1vTU8RxtU1UZ"
     }
@@ -3351,17 +3351,17 @@
     "default": 0
   },
   "flags": {
-    "dnd5e": {
+    "mojo": {
       "halflingLucky": true
     }
   },
   "_id": "125qFnXvT9z0iOic",
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "mojo",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787232144,
     "modifiedTime": 1673040729419,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "mojobuilder0000"
   }
 }

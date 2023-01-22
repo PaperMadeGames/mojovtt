@@ -490,7 +490,7 @@
       "type": "feat",
       "system": {
         "description": {
-          "value": "<p>The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>\n<table border=\"1\"><caption>Fiend Expanded Spells</caption>\n<thead>\n<tr>\n<td><strong>Spell Level</strong></td>\n<td><strong>Spells</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>@Compendium[dnd5e.spells.5SuJewoa1CRWaj1F]{Burning Hands}, @Compendium[dnd5e.spells.arzCrMRgcNiQuh43]{Command}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>@Compendium[dnd5e.spells.zwGsAv6kmwzYGhh3]{Blindness/Deafness}, @Compendium[dnd5e.spells.7u2obDvuvtZBkTfq]{Scorching Ray}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>@Compendium[dnd5e.spells.ztgcdrWPshKRpFd0]{Fireball}, @Compendium[dnd5e.spells.TwlD4PLcltv7Xh7j]{Stinking Cloud}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>@Compendium[dnd5e.spells.avD5XUtkBPQQR97c]{Fire Shield}, @Compendium[dnd5e.spells.X3DrXgxjwI2dvkD6]{Wall of Fire}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>@Compendium[dnd5e.spells.5e1xTohkzqFqbYH4]{Flame Strike}, @Compendium[dnd5e.spells.SLxA9QhrggTz0taU]{Hallow}</td>\n</tr>\n</tbody>\n</table>",
+          "value": "<p>The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>\n<table border=\"1\"><caption>Fiend Expanded Spells</caption>\n<thead>\n<tr>\n<td><strong>Spell Level</strong></td>\n<td><strong>Spells</strong></td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>@Compendium[mojo.spells.5SuJewoa1CRWaj1F]{Burning Hands}, @Compendium[mojo.spells.arzCrMRgcNiQuh43]{Command}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>@Compendium[mojo.spells.zwGsAv6kmwzYGhh3]{Blindness/Deafness}, @Compendium[mojo.spells.7u2obDvuvtZBkTfq]{Scorching Ray}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>@Compendium[mojo.spells.ztgcdrWPshKRpFd0]{Fireball}, @Compendium[mojo.spells.TwlD4PLcltv7Xh7j]{Stinking Cloud}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>@Compendium[mojo.spells.avD5XUtkBPQQR97c]{Fire Shield}, @Compendium[mojo.spells.X3DrXgxjwI2dvkD6]{Wall of Fire}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>@Compendium[mojo.spells.5e1xTohkzqFqbYH4]{Flame Strike}, @Compendium[mojo.spells.SLxA9QhrggTz0taU]{Hallow}</td>\n</tr>\n</tbody>\n</table>",
           "chat": "",
           "unidentified": ""
         },
@@ -558,7 +558,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.4IHsIcBhAVDt8QjY"
+          "sourceId": "Compendium.mojo.classfeatures.4IHsIcBhAVDt8QjY"
         }
       },
       "img": "icons/magic/control/encase-creature-monster-hold.webp",
@@ -684,7 +684,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.0E565kQUBmndJ1a2"
+          "sourceId": "Compendium.mojo.items.0E565kQUBmndJ1a2"
         }
       },
       "img": "icons/weapons/daggers/dagger-jeweled-purple.webp",
@@ -779,7 +779,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.eZGmdOhaTWMicXPW"
+          "sourceId": "Compendium.mojo.items.eZGmdOhaTWMicXPW"
         }
       },
       "img": "icons/containers/bags/pack-simple-leather-tan.webp",
@@ -905,7 +905,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.ddWvQRLmnnIS0eLF"
+          "sourceId": "Compendium.mojo.items.ddWvQRLmnnIS0eLF"
         }
       },
       "img": "icons/weapons/crossbows/crossbow-simple-brown.webp",
@@ -1017,7 +1017,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.WwdpHLXGX5r8uZu5"
+          "sourceId": "Compendium.mojo.items.WwdpHLXGX5r8uZu5"
         }
       },
       "img": "icons/equipment/chest/breastplate-quilted-brown.webp",
@@ -1129,7 +1129,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.8RXjiddJ6VGyE7vB"
+          "sourceId": "Compendium.mojo.items.8RXjiddJ6VGyE7vB"
         }
       },
       "img": "icons/equipment/chest/shirt-collared-brown.webp",
@@ -1139,12 +1139,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640605,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1229,7 +1229,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.SItCnYBqhzqBoaWG"
+          "sourceId": "Compendium.mojo.items.SItCnYBqhzqBoaWG"
         }
       },
       "img": "icons/weapons/ammunition/arrows-bodkin-yellow-red.webp",
@@ -1239,12 +1239,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647536,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1284,7 +1284,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.4MtQKPn9qMWCFjDA"
+          "sourceId": "Compendium.mojo.items.4MtQKPn9qMWCFjDA"
         }
       },
       "img": "icons/containers/ammunition/arrows-quiver-black.webp",
@@ -1339,7 +1339,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.H8YCd689ezlD26aT"
+          "sourceId": "Compendium.mojo.items.H8YCd689ezlD26aT"
         }
       },
       "img": "icons/containers/bags/pack-simple-leather.webp",
@@ -1394,7 +1394,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.9bWTRRDym06PzSAf"
+          "sourceId": "Compendium.mojo.items.9bWTRRDym06PzSAf"
         }
       },
       "img": "icons/containers/bags/coinpouch-simple-tan.webp",
@@ -1404,12 +1404,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640620,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1437,7 +1437,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.V13fjV5oSmvbRdgP"
+          "sourceId": "Compendium.mojo.items.V13fjV5oSmvbRdgP"
         }
       },
       "img": "icons/tools/cooking/fork-steel-grey.webp",
@@ -1447,12 +1447,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640627,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1532,7 +1532,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.QXmaarJ4X8P0C1HV"
+          "sourceId": "Compendium.mojo.items.QXmaarJ4X8P0C1HV"
         }
       },
       "img": "icons/sundries/survival/rope-wrapped-brown.webp",
@@ -1575,7 +1575,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.DVXmyetZuvxbzAwW"
+          "sourceId": "Compendium.mojo.items.DVXmyetZuvxbzAwW"
         }
       },
       "img": "icons/sundries/flags/banner-worn-blue.webp",
@@ -1670,7 +1670,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.f4w4GxBi0nYXmhX4"
+          "sourceId": "Compendium.mojo.items.f4w4GxBi0nYXmhX4"
         }
       },
       "img": "icons/consumables/meat/hock-leg-pink-brown.webp",
@@ -1680,12 +1680,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640633,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1713,7 +1713,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.DNOSEAvF4Oh1DlWy"
+          "sourceId": "Compendium.mojo.items.DNOSEAvF4Oh1DlWy"
         }
       },
       "img": "icons/sundries/lights/torch-black.webp",
@@ -1723,12 +1723,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640639,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1813,7 +1813,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.BnOCLuNWhVvzHLjl"
+          "sourceId": "Compendium.mojo.items.BnOCLuNWhVvzHLjl"
         }
       },
       "img": "icons/sundries/lights/torch-black.webp",
@@ -1823,12 +1823,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647547,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1908,7 +1908,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.Uv0ilmzbWvqmlCVH"
+          "sourceId": "Compendium.mojo.items.Uv0ilmzbWvqmlCVH"
         }
       },
       "img": "icons/sundries/survival/wetskin-leather-purple.webp",
@@ -1918,12 +1918,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640652,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -1957,7 +1957,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.woWZ1sO5IUVGzo58"
+          "sourceId": "Compendium.mojo.items.woWZ1sO5IUVGzo58"
         }
       },
       "img": "icons/tools/hand/lockpicks-steel-grey.webp",
@@ -2000,7 +2000,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.V5UAjT3ed6sDNtgm"
+          "sourceId": "Compendium.mojo.items.V5UAjT3ed6sDNtgm"
         }
       },
       "img": "icons/tools/hand/pickaxe-steel-white.webp",
@@ -2092,7 +2092,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.LvSBjRKoCAKaAnQy"
+          "sourceId": "Compendium.mojo.monsterfeatures.LvSBjRKoCAKaAnQy"
         }
       },
       "img": "icons/creatures/mammals/elk-moose-marked-green.webp",
@@ -2116,7 +2116,7 @@
       "type": "feat",
       "system": {
         "description": {
-          "value": "<div title=\"Page 6\">\n<div>\n<div>\n<p><em>Your half-­elf character has some qualities in common with elves and some that are unique to half-­elves. </em></p><p><em><strong>Ability Score Increase.</strong></em> Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.</p><p><em><strong>Age.</strong></em> Half-­elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.</p><p><em><strong>Alignment.</strong></em> Half-­elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others' demands, and sometimes prove unreliable, or at least unpredictable.</p>\n<div title=\"Page 7\">\n<div>\n<div>\n<p><em><strong>Size.</strong></em> Half-­elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.</p><p><em><strong>Speed.</strong></em> Your base walking speed is 30 feet.</p><p><em><strong>Darkvision.</strong></em> Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</p><p><em><strong>Fey Ancestry.</strong></em> @Compendium[dnd5e.races.cnTbpPPeGW7vGjOV]{Fey Ancestry} You have advantage on saving throws against being charmed, and magic can't put you to sleep.</p><p><em><strong>Skill Versatility.</strong></em> You gain proficiency in two skills of your choice.</p><p><em><strong>Languages.</strong></em> You can speak, read, and write Common, Elvish, and one extra language of your choice.</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>",
+          "value": "<div title=\"Page 6\">\n<div>\n<div>\n<p><em>Your half-­elf character has some qualities in common with elves and some that are unique to half-­elves. </em></p><p><em><strong>Ability Score Increase.</strong></em> Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.</p><p><em><strong>Age.</strong></em> Half-­elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.</p><p><em><strong>Alignment.</strong></em> Half-­elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others' demands, and sometimes prove unreliable, or at least unpredictable.</p>\n<div title=\"Page 7\">\n<div>\n<div>\n<p><em><strong>Size.</strong></em> Half-­elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.</p><p><em><strong>Speed.</strong></em> Your base walking speed is 30 feet.</p><p><em><strong>Darkvision.</strong></em> Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.</p><p><em><strong>Fey Ancestry.</strong></em> @Compendium[mojo.races.cnTbpPPeGW7vGjOV]{Fey Ancestry} You have advantage on saving throws against being charmed, and magic can't put you to sleep.</p><p><em><strong>Skill Versatility.</strong></em> You gain proficiency in two skills of your choice.</p><p><em><strong>Languages.</strong></em> You can speak, read, and write Common, Elvish, and one extra language of your choice.</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>",
           "chat": "",
           "unidentified": ""
         },
@@ -2184,7 +2184,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.races.Hye5IZwPOSwV0qRR"
+          "sourceId": "Compendium.mojo.races.Hye5IZwPOSwV0qRR"
         }
       },
       "img": "icons/magic/nature/leaf-glow-triple-teal.webp",
@@ -2209,7 +2209,7 @@
       "img": "icons/creatures/mammals/bat-giant-tattered-purple.webp",
       "system": {
         "description": {
-          "value": "<p>As a warlock, you gain the following class features.</p>\n<h3>Hit Points</h3>\n<p><strong>Hit Dice:</strong> 1d8 per warlock level<br /><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per warlock level after 1st</p>\n<h3>Proficiencies</h3>\n<p><strong>Armor:</strong> Light armor<br /><strong>Weapons:</strong> Simple weapons<br /><strong>Tools:</strong> None<br /><strong>Saving Throws:</strong> Wisdom, Charisma<br /><strong>Skills:</strong> Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion</p>\n<h3>Equipment</h3>\n<p>You start with the following equipment, in addition to the equipment granted by your background:</p>\n<ul>\n<li>(a) a light crossbow and 20 bolts or (b) any simple weapon</li>\n<li>(a) a component pouch or (b) an arcane focus</li>\n<li>(a) a scholar's pack or (b) a dungeoneer's pack</li>\n<li>Leather armor, any simple weapon, and two daggers</li>\n</ul>\n<h1>Warlock Advancement</h1>\n<table border=\"0\">\n<thead>\n<tr>\n<td>Level</td>\n<td>Proficiency Bonus</td>\n<td>Features</td>\n<td>Invocations Known</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.jTXHaK0vvT5DV3uO]{Otherworldly Patron}, @Compendium[dnd5e.classfeatures.x6IJZwr6f0SGral7]{Pact Magic}</td>\n<td>̶</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.8MlxM2nEfE3Q0EVk]{Eldritch Invocations}</td>\n<td>2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.QwgfIpCN8VWfoUtX]{Pact Boon}</td>\n<td>2</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>3rd Level Spells, +1 Invocation</td>\n<td>3</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>Otherworldly Patron feature</td>\n<td>3</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>4th Level Spells, +1 Invocation</td>\n<td>4</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+3</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>4</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>5th Level Spells, +1 Invocation</td>\n<td>5</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+4</td>\n<td>Otherworldly Patron feature</td>\n<td>5</td>\n</tr>\n<tr>\n<td>11th</td>\n<td>+4</td>\n<td>@Compendium[dnd5e.classfeatures.zB77V8BcCJvWVxck]{Mystic Arcanum (6th-Level Spell)}</td>\n<td>5</td>\n</tr>\n<tr>\n<td>12th</td>\n<td>+4</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}, +1 Invocation</td>\n<td>6</td>\n</tr>\n<tr>\n<td>13th</td>\n<td>+5</td>\n<td>@Compendium[dnd5e.classfeatures.HBn6FXLz7Eiudz0V]{Mystic Arcanum (7th-Level Spell)}</td>\n<td>6</td>\n</tr>\n<tr>\n<td>14th</td>\n<td>+5</td>\n<td>Otherworldly Patron feature</td>\n<td>6</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>+5</td>\n<td>@Compendium[dnd5e.classfeatures.knDZR4l4QfLTKinm]{Mystic Arcanum (8th-Level Spell)}, +1 Invocation</td>\n<td>7</td>\n</tr>\n<tr>\n<td>16th</td>\n<td>+5</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>7</td>\n</tr>\n<tr>\n<td>17th</td>\n<td>+6</td>\n<td>@Compendium[dnd5e.classfeatures.vMxJQEKeK6WwZFaF]{Mystic Arcanum (9th-Level Spell)}</td>\n<td>7</td>\n</tr>\n<tr>\n<td>18th</td>\n<td>+6</td>\n<td>+1 Invocation</td>\n<td>8</td>\n</tr>\n<tr>\n<td>19th</td>\n<td>+6</td>\n<td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>8</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>+6</td>\n<td>@Compendium[dnd5e.classfeatures.0C04rwyvoknvFYiy]{Eldritch Master}</td>\n<td>8</td>\n</tr>\n</tbody>\n</table>\n<hr />\n<h3>Your Pact Boon</h3>\n<p>Each Pact Boon option produces a special creature or an object that reflects your patron's nature.</p>\n<p><em><strong>Pact of the Chain. </strong></em>Your familiar is more cunning than a typical familiar. Its default form can be a reflection of your patron, with imps and quasits tied to the Fiend.</p>\n<p><em><strong>Pact of the Blade. </strong></em>If you serve the Fiend, your weapon could be an axe made of black metal and adorned with decorative flames.</p>\n<p><em><strong>Pact of the Tome. </strong></em>Your Book of Shadows could be a weighty tome bound in demon hide studded with iron, holding spells of conjuration and a wealth of forbidden lore about the sinister regions of the cosmos, a gift of the Fiend.</p>\n<hr />\n<h1>Otherworldly Patrons</h1>\n<p>The beings that serve as patrons for warlocks are mighty inhabitants of other planes of existence—not gods, but almost godlike in their power. Various patrons give their warlocks access to different powers and invocations, and expect significant favors in return.</p>\n<p>Some patrons collect warlocks, doling out mystic knowledge relatively freely or boasting of their ability to bind mortals to their will. Other patrons bestow their power only grudgingly, and might make a pact with only one warlock. Warlocks who serve the same patron might view each other as allies, siblings, or rivals.</p>\n<p>@Compendium[dnd5e.subclasses.WPFVBg589uI8iOMH]{The Fiend}</p>",
+          "value": "<p>As a warlock, you gain the following class features.</p>\n<h3>Hit Points</h3>\n<p><strong>Hit Dice:</strong> 1d8 per warlock level<br /><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per warlock level after 1st</p>\n<h3>Proficiencies</h3>\n<p><strong>Armor:</strong> Light armor<br /><strong>Weapons:</strong> Simple weapons<br /><strong>Tools:</strong> None<br /><strong>Saving Throws:</strong> Wisdom, Charisma<br /><strong>Skills:</strong> Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion</p>\n<h3>Equipment</h3>\n<p>You start with the following equipment, in addition to the equipment granted by your background:</p>\n<ul>\n<li>(a) a light crossbow and 20 bolts or (b) any simple weapon</li>\n<li>(a) a component pouch or (b) an arcane focus</li>\n<li>(a) a scholar's pack or (b) a dungeoneer's pack</li>\n<li>Leather armor, any simple weapon, and two daggers</li>\n</ul>\n<h1>Warlock Advancement</h1>\n<table border=\"0\">\n<thead>\n<tr>\n<td>Level</td>\n<td>Proficiency Bonus</td>\n<td>Features</td>\n<td>Invocations Known</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+2</td>\n<td>@Compendium[mojo.classfeatures.jTXHaK0vvT5DV3uO]{Otherworldly Patron}, @Compendium[mojo.classfeatures.x6IJZwr6f0SGral7]{Pact Magic}</td>\n<td>̶</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>@Compendium[mojo.classfeatures.8MlxM2nEfE3Q0EVk]{Eldritch Invocations}</td>\n<td>2</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>@Compendium[mojo.classfeatures.QwgfIpCN8VWfoUtX]{Pact Boon}</td>\n<td>2</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>2</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>3rd Level Spells, +1 Invocation</td>\n<td>3</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>Otherworldly Patron feature</td>\n<td>3</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>4th Level Spells, +1 Invocation</td>\n<td>4</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+3</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>4</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>5th Level Spells, +1 Invocation</td>\n<td>5</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+4</td>\n<td>Otherworldly Patron feature</td>\n<td>5</td>\n</tr>\n<tr>\n<td>11th</td>\n<td>+4</td>\n<td>@Compendium[mojo.classfeatures.zB77V8BcCJvWVxck]{Mystic Arcanum (6th-Level Spell)}</td>\n<td>5</td>\n</tr>\n<tr>\n<td>12th</td>\n<td>+4</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}, +1 Invocation</td>\n<td>6</td>\n</tr>\n<tr>\n<td>13th</td>\n<td>+5</td>\n<td>@Compendium[mojo.classfeatures.HBn6FXLz7Eiudz0V]{Mystic Arcanum (7th-Level Spell)}</td>\n<td>6</td>\n</tr>\n<tr>\n<td>14th</td>\n<td>+5</td>\n<td>Otherworldly Patron feature</td>\n<td>6</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>+5</td>\n<td>@Compendium[mojo.classfeatures.knDZR4l4QfLTKinm]{Mystic Arcanum (8th-Level Spell)}, +1 Invocation</td>\n<td>7</td>\n</tr>\n<tr>\n<td>16th</td>\n<td>+5</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>7</td>\n</tr>\n<tr>\n<td>17th</td>\n<td>+6</td>\n<td>@Compendium[mojo.classfeatures.vMxJQEKeK6WwZFaF]{Mystic Arcanum (9th-Level Spell)}</td>\n<td>7</td>\n</tr>\n<tr>\n<td>18th</td>\n<td>+6</td>\n<td>+1 Invocation</td>\n<td>8</td>\n</tr>\n<tr>\n<td>19th</td>\n<td>+6</td>\n<td>@Compendium[mojo.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td>\n<td>8</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>+6</td>\n<td>@Compendium[mojo.classfeatures.0C04rwyvoknvFYiy]{Eldritch Master}</td>\n<td>8</td>\n</tr>\n</tbody>\n</table>\n<hr />\n<h3>Your Pact Boon</h3>\n<p>Each Pact Boon option produces a special creature or an object that reflects your patron's nature.</p>\n<p><em><strong>Pact of the Chain. </strong></em>Your familiar is more cunning than a typical familiar. Its default form can be a reflection of your patron, with imps and quasits tied to the Fiend.</p>\n<p><em><strong>Pact of the Blade. </strong></em>If you serve the Fiend, your weapon could be an axe made of black metal and adorned with decorative flames.</p>\n<p><em><strong>Pact of the Tome. </strong></em>Your Book of Shadows could be a weighty tome bound in demon hide studded with iron, holding spells of conjuration and a wealth of forbidden lore about the sinister regions of the cosmos, a gift of the Fiend.</p>\n<hr />\n<h1>Otherworldly Patrons</h1>\n<p>The beings that serve as patrons for warlocks are mighty inhabitants of other planes of existence—not gods, but almost godlike in their power. Various patrons give their warlocks access to different powers and invocations, and expect significant favors in return.</p>\n<p>Some patrons collect warlocks, doling out mystic knowledge relatively freely or boasting of their ability to bind mortals to their will. Other patrons bestow their power only grudgingly, and might make a pact with only one warlock. Warlocks who serve the same patron might view each other as allies, siblings, or rivals.</p>\n<p>@Compendium[mojo.subclasses.WPFVBg589uI8iOMH]{The Fiend}</p>",
           "chat": "",
           "unidentified": ""
         },
@@ -2224,8 +2224,8 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.jTXHaK0vvT5DV3uO",
-                "Compendium.dnd5e.classfeatures.x6IJZwr6f0SGral7"
+                "Compendium.mojo.classfeatures.jTXHaK0vvT5DV3uO",
+                "Compendium.mojo.classfeatures.x6IJZwr6f0SGral7"
               ],
               "optional": false,
               "spell": {
@@ -2239,8 +2239,8 @@
             },
             "value": {
               "added": {
-                "8eas0z5toxxu5poz": "Compendium.dnd5e.classfeatures.jTXHaK0vvT5DV3uO",
-                "thjhxktqgk0fp7jx": "Compendium.dnd5e.classfeatures.x6IJZwr6f0SGral7"
+                "8eas0z5toxxu5poz": "Compendium.mojo.classfeatures.jTXHaK0vvT5DV3uO",
+                "thjhxktqgk0fp7jx": "Compendium.mojo.classfeatures.x6IJZwr6f0SGral7"
               }
             },
             "level": 1,
@@ -2251,7 +2251,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.8MlxM2nEfE3Q0EVk"
+                "Compendium.mojo.classfeatures.8MlxM2nEfE3Q0EVk"
               ],
               "optional": false,
               "spell": {
@@ -2272,7 +2272,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.QwgfIpCN8VWfoUtX"
+                "Compendium.mojo.classfeatures.QwgfIpCN8VWfoUtX"
               ],
               "optional": false,
               "spell": {
@@ -2293,7 +2293,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.zB77V8BcCJvWVxck"
+                "Compendium.mojo.classfeatures.zB77V8BcCJvWVxck"
               ],
               "optional": false,
               "spell": {
@@ -2314,7 +2314,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.HBn6FXLz7Eiudz0V"
+                "Compendium.mojo.classfeatures.HBn6FXLz7Eiudz0V"
               ],
               "optional": false,
               "spell": {
@@ -2335,7 +2335,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.knDZR4l4QfLTKinm"
+                "Compendium.mojo.classfeatures.knDZR4l4QfLTKinm"
               ],
               "optional": false,
               "spell": {
@@ -2356,7 +2356,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.vMxJQEKeK6WwZFaF"
+                "Compendium.mojo.classfeatures.vMxJQEKeK6WwZFaF"
               ],
               "optional": false,
               "spell": {
@@ -2377,7 +2377,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.0C04rwyvoknvFYiy"
+                "Compendium.mojo.classfeatures.0C04rwyvoknvFYiy"
               ],
               "optional": false,
               "spell": {
@@ -2433,7 +2433,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.classes.7WJp9vhi6F6SlAFa"
+          "sourceId": "Compendium.mojo.classes.7WJp9vhi6F6SlAFa"
         }
       },
       "_stats": {
@@ -2524,12 +2524,12 @@
         "default": 0
       },
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.jTXHaK0vvT5DV3uO",
+        "mojo": {
+          "sourceId": "Compendium.mojo.classfeatures.jTXHaK0vvT5DV3uO",
           "advancementOrigin": "idbg35ipjfs0tl4o.6wykf1qry5o7swn1"
         },
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.jTXHaK0vvT5DV3uO"
+          "sourceId": "Compendium.mojo.classfeatures.jTXHaK0vvT5DV3uO"
         }
       },
       "_stats": {
@@ -2620,12 +2620,12 @@
         "default": 0
       },
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.x6IJZwr6f0SGral7",
+        "mojo": {
+          "sourceId": "Compendium.mojo.classfeatures.x6IJZwr6f0SGral7",
           "advancementOrigin": "idbg35ipjfs0tl4o.6wykf1qry5o7swn1"
         },
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.x6IJZwr6f0SGral7"
+          "sourceId": "Compendium.mojo.classfeatures.x6IJZwr6f0SGral7"
         }
       },
       "_stats": {
@@ -2644,7 +2644,7 @@
       "img": "icons/creatures/unholy/demon-fire-horned-winged-roar.webp",
       "system": {
         "description": {
-          "value": "<p>You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.</p>\n<h2>Expanded Spell List</h2>\n<p>The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>\n<table border=\"1\">\n<thead>\n<tr>\n<td>Spell Level</td>\n<td>Spells</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>@Compendium[dnd5e.spells.5SuJewoa1CRWaj1F]{Burning Hands}, @Compendium[dnd5e.spells.arzCrMRgcNiQuh43]{Command}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>@Compendium[dnd5e.spells.zwGsAv6kmwzYGhh3]{Blindness/Deafness}, @Compendium[dnd5e.spells.7u2obDvuvtZBkTfq]{Scorching Ray}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>@Compendium[dnd5e.spells.ztgcdrWPshKRpFd0]{Fireball}, @Compendium[dnd5e.spells.TwlD4PLcltv7Xh7j]{Stinking Cloud}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>@Compendium[dnd5e.spells.avD5XUtkBPQQR97c]{Fire Shield}, @Compendium[dnd5e.spells.X3DrXgxjwI2dvkD6]{Wall of Fire}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>@Compendium[dnd5e.spells.5e1xTohkzqFqbYH4]{Flame Strike}, @Compendium[dnd5e.spells.SLxA9QhrggTz0taU]{Hallow}</td>\n</tr>\n</tbody>\n</table>",
+          "value": "<p>You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.</p>\n<h2>Expanded Spell List</h2>\n<p>The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p>\n<table border=\"1\">\n<thead>\n<tr>\n<td>Spell Level</td>\n<td>Spells</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>@Compendium[mojo.spells.5SuJewoa1CRWaj1F]{Burning Hands}, @Compendium[mojo.spells.arzCrMRgcNiQuh43]{Command}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>@Compendium[mojo.spells.zwGsAv6kmwzYGhh3]{Blindness/Deafness}, @Compendium[mojo.spells.7u2obDvuvtZBkTfq]{Scorching Ray}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>@Compendium[mojo.spells.ztgcdrWPshKRpFd0]{Fireball}, @Compendium[mojo.spells.TwlD4PLcltv7Xh7j]{Stinking Cloud}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>@Compendium[mojo.spells.avD5XUtkBPQQR97c]{Fire Shield}, @Compendium[mojo.spells.X3DrXgxjwI2dvkD6]{Wall of Fire}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>@Compendium[mojo.spells.5e1xTohkzqFqbYH4]{Flame Strike}, @Compendium[mojo.spells.SLxA9QhrggTz0taU]{Hallow}</td>\n</tr>\n</tbody>\n</table>",
           "chat": "",
           "unidentified": ""
         },
@@ -2657,7 +2657,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.Jv0zu4BtUi8bFCqJ"
+                "Compendium.mojo.classfeatures.Jv0zu4BtUi8bFCqJ"
               ],
               "optional": false,
               "spell": {
@@ -2671,7 +2671,7 @@
             },
             "value": {
               "added": {
-                "59d1unxg1ruc8oyh": "Compendium.dnd5e.classfeatures.Jv0zu4BtUi8bFCqJ"
+                "59d1unxg1ruc8oyh": "Compendium.mojo.classfeatures.Jv0zu4BtUi8bFCqJ"
               }
             },
             "level": 1,
@@ -2682,7 +2682,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.OQSb0bO1yDI4aiMx"
+                "Compendium.mojo.classfeatures.OQSb0bO1yDI4aiMx"
               ],
               "optional": false,
               "spell": {
@@ -2703,7 +2703,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.9UZ2WjUF2k58CQug"
+                "Compendium.mojo.classfeatures.9UZ2WjUF2k58CQug"
               ],
               "optional": false,
               "spell": {
@@ -2724,7 +2724,7 @@
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.aCUmlnHlUPHS0rdu"
+                "Compendium.mojo.classfeatures.aCUmlnHlUPHS0rdu"
               ],
               "optional": false,
               "spell": {
@@ -2754,7 +2754,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.subclasses.WPFVBg589uI8iOMH"
+          "sourceId": "Compendium.mojo.subclasses.WPFVBg589uI8iOMH"
         }
       },
       "_stats": {
@@ -2850,12 +2850,12 @@
         "default": 0
       },
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.Jv0zu4BtUi8bFCqJ",
+        "mojo": {
+          "sourceId": "Compendium.mojo.classfeatures.Jv0zu4BtUi8bFCqJ",
           "advancementOrigin": "r4vy8utsxo9my9r0.mwpiq5ybhynszxgq"
         },
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.Jv0zu4BtUi8bFCqJ"
+          "sourceId": "Compendium.mojo.classfeatures.Jv0zu4BtUi8bFCqJ"
         }
       },
       "_stats": {
@@ -2963,19 +2963,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.Z9p1vezIn95jw1Yw"
+          "sourceId": "Compendium.mojo.spells.Z9p1vezIn95jw1Yw"
         }
       },
       "img": "icons/magic/fire/projectile-fireball-smoke-teal.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661603486083,
         "modifiedTime": 1661603486083,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -3074,19 +3074,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.vrN18tbTw7io5MWd"
+          "sourceId": "Compendium.mojo.spells.vrN18tbTw7io5MWd"
         }
       },
       "img": "icons/magic/water/projectile-ice-faceted-blue.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661603486083,
         "modifiedTime": 1661603486083,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -3185,19 +3185,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.5SuJewoa1CRWaj1F"
+          "sourceId": "Compendium.mojo.spells.5SuJewoa1CRWaj1F"
         }
       },
       "img": "icons/magic/air/fog-gas-smoke-dense-orange.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661603486085,
         "modifiedTime": 1661603486085,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -3291,19 +3291,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.arzCrMRgcNiQuh43"
+          "sourceId": "Compendium.mojo.spells.arzCrMRgcNiQuh43"
         }
       },
       "img": "icons/magic/fire/explosion-fireball-small-purple.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661603486086,
         "modifiedTime": 1661603486086,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       }
     },
     {
@@ -3327,12 +3327,12 @@
       },
       "flags": {},
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "mojo",
         "systemVersion": "2.1.0",
         "coreVersion": "10.291",
         "createdTime": 1673040183979,
         "modifiedTime": 1673040964521,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "mojobuilder0000"
       },
       "_id": "8uFLMKLwRO7Y5Xl2"
     }
@@ -3345,11 +3345,11 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "mojo",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787232167,
     "modifiedTime": 1673040964521,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "mojobuilder0000"
   }
 }

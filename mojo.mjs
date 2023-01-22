@@ -1,15 +1,9 @@
 /**
- * The DnD5e game system for Foundry Virtual Tabletop
- * A system for playing the fifth edition of the world's most popular role-playing game.
- * Author: Atropos
- * Software License: MIT
- * Content License: https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf
- * Repository: https://github.com/foundryvtt/dnd5e
- * Issue Tracker: https://github.com/foundryvtt/dnd5e/issues
+ * The Mojo game system for Foundry Virtual Tabletop
  */
 
 // Import Configuration
-import DND5E from "./module/config.mjs";
+import MOJO from "./module/config.mjs";
 import registerSystemSettings from "./module/settings.mjs";
 
 // Import Submodules
@@ -26,10 +20,10 @@ import {ModuleArt} from "./module/module-art.mjs";
 /*  Define Module Structure                     */
 /* -------------------------------------------- */
 
-globalThis.dnd5e = {
+globalThis.mojo = {
   applications,
   canvas,
-  config: DND5E,
+  config: MOJO,
   dataModels,
   dice,
   documents,
@@ -42,47 +36,47 @@ globalThis.dnd5e = {
 /* -------------------------------------------- */
 
 Hooks.once("init", function() {
-  globalThis.dnd5e = game.dnd5e = Object.assign(game.system, globalThis.dnd5e);
-  console.log(`DnD5e | Initializing the DnD5e Game System - Version ${dnd5e.version}\n${DND5E.ASCII}`);
+  globalThis.mojo = game.mojo = Object.assign(game.system, globalThis.mojo);
+  console.log(`Mojo | Initializing the Mojo Game System - Version ${mojo.version}\n${MOJO.ASCII}`);
 
-  /** @deprecated */
-  Object.defineProperty(dnd5e, "entities", {
-    get() {
-      foundry.utils.logCompatibilityWarning(
-        "You are referencing the 'dnd5e.entities' property which has been deprecated and renamed to "
-        + "'dnd5e.documents'. Support for this old path will be removed in a future version.",
-        { since: "DnD5e 2.0", until: "DnD5e 2.2" }
-      );
-      return dnd5e.documents;
-    }
-  });
+  // /** @deprecated */
+  // Object.defineProperty(mojo, "entities", {
+  //   get() {
+  //     foundry.utils.logCompatibilityWarning(
+  //       "You are referencing the 'mojo.entities' property which has been deprecated and renamed to "
+  //       + "'mojo.documents'. Support for this old path will be removed in a future version.",
+  //       { since: "Mojo 2.0", until: "Mojo 2.2" }
+  //     );
+  //     return mojo.documents;
+  //   }
+  // });
 
-  /** @deprecated */
-  Object.defineProperty(dnd5e, "rollItemMacro", {
-    get() {
-      foundry.utils.logCompatibilityWarning(
-        "You are referencing the 'dnd5e.rollItemMacro' method which has been deprecated and renamed to "
-        + "'dnd5e.documents.macro.rollItem'. Support for this old path will be removed in a future version.",
-        { since: "DnD5e 2.0", until: "DnD5e 2.2" }
-      );
-      return dnd5e.documents.macro.rollItem;
-    }
-  });
+  // /** @deprecated */
+  // Object.defineProperty(mojo, "rollItemMacro", {
+  //   get() {
+  //     foundry.utils.logCompatibilityWarning(
+  //       "You are referencing the 'mojo.rollItemMacro' method which has been deprecated and renamed to "
+  //       + "'mojo.documents.macro.rollItem'. Support for this old path will be removed in a future version.",
+  //       { since: "Mojo 2.0", until: "Mojo 2.2" }
+  //     );
+  //     return mojo.documents.macro.rollItem;
+  //   }
+  // });
 
-  /** @deprecated */
-  Object.defineProperty(dnd5e, "macros", {
-    get() {
-      foundry.utils.logCompatibilityWarning(
-        "You are referencing the 'dnd5e.macros' property which has been deprecated and renamed to "
-        + "'dnd5e.documents.macro'. Support for this old path will be removed in a future version.",
-        { since: "DnD5e 2.0", until: "DnD5e 2.2" }
-      );
-      return dnd5e.documents.macro;
-    }
-  });
+  // /** @deprecated */
+  // Object.defineProperty(mojo, "macros", {
+  //   get() {
+  //     foundry.utils.logCompatibilityWarning(
+  //       "You are referencing the 'mojo.macros' property which has been deprecated and renamed to "
+  //       + "'mojo.documents.macro'. Support for this old path will be removed in a future version.",
+  //       { since: "Mojo 2.0", until: "Mojo 2.2" }
+  //     );
+  //     return mojo.documents.macro;
+  //   }
+  // });
 
   // Record Configuration Values
-  CONFIG.DND5E = DND5E;
+  CONFIG.MOJO = MOJO;
   CONFIG.ActiveEffect.documentClass = documents.ActiveEffect5e;
   CONFIG.Actor.documentClass = documents.Actor5e;
   CONFIG.Item.documentClass = documents.Item5e;
@@ -101,16 +95,16 @@ Hooks.once("init", function() {
   _determineValidationStrictness();
 
   // Configure module art.
-  game.dnd5e.moduleArt = new ModuleArt();
+  game.mojo.moduleArt = new ModuleArt();
 
   // Remove honor & sanity from configuration if they aren't enabled
-  if ( !game.settings.get("dnd5e", "honorScore") ) {
-    delete DND5E.abilities.hon;
-    delete DND5E.abilityAbbreviations.hon;
+  if ( !game.settings.get("mojo", "honorScore") ) {
+    delete MOJO.abilities.hon;
+    delete MOJO.abilityAbbreviations.hon;
   }
-  if ( !game.settings.get("dnd5e", "sanityScore") ) {
-    delete DND5E.abilities.san;
-    delete DND5E.abilityAbbreviations.san;
+  if ( !game.settings.get("mojo", "sanityScore") ) {
+    delete MOJO.abilities.san;
+    delete MOJO.abilityAbbreviations.san;
   }
 
   // Patch Core Functions
@@ -127,34 +121,34 @@ Hooks.once("init", function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("dnd5e", applications.actor.ActorSheet5eCharacter, {
+  Actors.registerSheet("mojo", applications.actor.ActorSheet5eCharacter, {
     types: ["character"],
     makeDefault: true,
-    label: "DND5E.SheetClassCharacter"
+    label: "MOJO.SheetClassCharacter"
   });
-  Actors.registerSheet("dnd5e", applications.actor.ActorSheet5eNPC, {
-    types: ["npc"],
-    makeDefault: true,
-    label: "DND5E.SheetClassNPC"
-  });
-  Actors.registerSheet("dnd5e", applications.actor.ActorSheet5eVehicle, {
-    types: ["vehicle"],
-    makeDefault: true,
-    label: "DND5E.SheetClassVehicle"
-  });
-  Actors.registerSheet("dnd5e", applications.actor.GroupActorSheet, {
-    types: ["group"],
-    makeDefault: true,
-    label: "DND5E.SheetClassGroup"
-  });
+  // Actors.registerSheet("mojo", applications.actor.ActorSheet5eNPC, {
+  //   types: ["npc"],
+  //   makeDefault: true,
+  //   label: "MOJO.SheetClassNPC"
+  // });
+  // Actors.registerSheet("mojo", applications.actor.ActorSheet5eVehicle, {
+  //   types: ["vehicle"],
+  //   makeDefault: true,
+  //   label: "MOJO.SheetClassVehicle"
+  // });
+  // Actors.registerSheet("mojo", applications.actor.GroupActorSheet, {
+  //   types: ["group"],
+  //   makeDefault: true,
+  //   label: "MOJO.SheetClassGroup"
+  // });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("dnd5e", applications.item.ItemSheet5e, {
+  Items.registerSheet("mojo", applications.item.ItemSheet5e, {
     makeDefault: true,
-    label: "DND5E.SheetClassItem"
+    label: "MOJO.SheetClassItem"
   });
-  DocumentSheetConfig.registerSheet(JournalEntryPage, "dnd5e", applications.journal.JournalClassPageSheet, {
-    label: "DND5E.SheetClassClassSummary",
+  DocumentSheetConfig.registerSheet(JournalEntryPage, "mojo", applications.journal.JournalClassPageSheet, {
+    label: "MOJO.SheetClassClassSummary",
     types: ["class"]
   });
 
@@ -168,7 +162,7 @@ Hooks.once("init", function() {
  * @internal
  */
 function _determineValidationStrictness() {
-  dataModels.SystemDataModel._enableV10Validation = game.settings.get("dnd5e", "strictValidation");
+  dataModels.SystemDataModel._enableV10Validation = game.settings.get("mojo", "strictValidation");
 }
 
 /**
@@ -178,9 +172,9 @@ function _determineValidationStrictness() {
 async function _configureValidationStrictness() {
   if ( !game.user.isGM ) return;
   const invalidDocuments = game.actors.invalidDocumentIds.size + game.items.invalidDocumentIds.size;
-  const strictValidation = game.settings.get("dnd5e", "strictValidation");
+  const strictValidation = game.settings.get("mojo", "strictValidation");
   if ( invalidDocuments && strictValidation ) {
-    await game.settings.set("dnd5e", "strictValidation", false);
+    await game.settings.set("mojo", "strictValidation", false);
     game.socket.emit("reload");
     foundry.utils.debouncedReload();
   }
@@ -194,9 +188,9 @@ async function _configureValidationStrictness() {
  * Prepare attribute lists.
  */
 Hooks.once("setup", function() {
-  CONFIG.DND5E.trackableAttributes = expandAttributeList(CONFIG.DND5E.trackableAttributes);
-  CONFIG.DND5E.consumableResources = expandAttributeList(CONFIG.DND5E.consumableResources);
-  game.dnd5e.moduleArt.registerModuleArt();
+  CONFIG.MOJO.trackableAttributes = expandAttributeList(CONFIG.MOJO.trackableAttributes);
+  CONFIG.MOJO.consumableResources = expandAttributeList(CONFIG.MOJO.consumableResources);
+  game.mojo.moduleArt.registerModuleArt();
 });
 
 /* --------------------------------------------- */
@@ -218,7 +212,7 @@ function expandAttributeList(attributes) {
 /**
  * Perform one-time pre-localization and sorting of some configuration objects
  */
-Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.DND5E));
+Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.MOJO));
 
 /* -------------------------------------------- */
 /*  Foundry VTT Ready                           */
@@ -232,7 +226,7 @@ Hooks.once("ready", function() {
   _configureValidationStrictness();
 
   // Apply custom compendium styles to the SRD rules compendium.
-  const rules = game.packs.get("dnd5e.rules");
+  const rules = game.packs.get("mojo.rules");
   rules.apps = [new applications.journal.SRDCompendium(rules)];
 
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
@@ -245,9 +239,9 @@ Hooks.once("ready", function() {
 
   // Determine whether a system migration is required and feasible
   if ( !game.user.isGM ) return;
-  const cv = game.settings.get("dnd5e", "systemMigrationVersion") || game.world.flags.dnd5e?.version;
+  const cv = game.settings.get("mojo", "systemMigrationVersion") || game.world.flags.mojo?.version;
   const totalDocuments = game.actors.size + game.scenes.size + game.items.size;
-  if ( !cv && totalDocuments === 0 ) return game.settings.set("dnd5e", "systemMigrationVersion", game.system.version);
+  if ( !cv && totalDocuments === 0 ) return game.settings.set("mojo", "systemMigrationVersion", game.system.version);
   if ( cv && !isNewerVersion(game.system.flags.needsMigrationVersion, cv) ) return;
 
   // Perform the migration
@@ -262,7 +256,7 @@ Hooks.once("ready", function() {
 /* -------------------------------------------- */
 
 Hooks.on("canvasInit", gameCanvas => {
-  gameCanvas.grid.diagonalRule = game.settings.get("dnd5e", "diagonalMovement");
+  gameCanvas.grid.diagonalRule = game.settings.get("mojo", "diagonalMovement");
   SquareGrid.prototype.measureDistances = canvas.measureDistances;
 });
 
@@ -289,5 +283,5 @@ export {
   documents,
   migrations,
   utils,
-  DND5E
+  MOJO
 };

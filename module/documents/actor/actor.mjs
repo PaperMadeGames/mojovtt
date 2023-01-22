@@ -40,7 +40,7 @@ export default class Actor5e extends Actor {
    * @type {boolean}
    */
   get isPolymorphed() {
-    return this.getFlag("dnd5e", "isPolymorphed") || false;
+    return this.getFlag("mojo", "isPolymorphed") || false;
   }
 
   /* -------------------------------------------- */
@@ -70,9 +70,9 @@ export default class Actor5e extends Actor {
   /** @inheritdoc */
   _initializeSource(source, options={}) {
     source = super._initializeSource(source, options);
-    if ( !source._id || !options.pack || dnd5e.moduleArt.suppressArt ) return source;
+    if ( !source._id || !options.pack || mojo.moduleArt.suppressArt ) return source;
     const uuid = `Compendium.${options.pack}.${source._id}`;
-    const art = game.dnd5e.moduleArt.map.get(uuid);
+    const art = game.mojo.moduleArt.map.get(uuid);
     if ( art?.actor || art?.token ) {
       if ( art.actor ) source.img = art.actor;
       if ( typeof art.token === "string" ) source.prototypeToken.texture.src = art.token;
@@ -141,7 +141,7 @@ export default class Actor5e extends Actor {
       return this.system._prepareDerivedData();
     }
 
-    const flags = this.flags.dnd5e || {};
+    const flags = this.flags.mojo || {};
     this.labels = {};
 
     // Retrieve data for polymorphed actors
@@ -178,7 +178,7 @@ export default class Actor5e extends Actor {
    * @returns {number}      The XP required.
    */
   getLevelExp(level) {
-    const levels = CONFIG.DND5E.CHARACTER_EXP_LEVELS;
+    const levels = CONFIG.MOJO.CHARACTER_EXP_LEVELS;
     return levels[Math.min(level, levels.length - 1)];
   }
 
@@ -191,7 +191,7 @@ export default class Actor5e extends Actor {
    */
   getCRExp(cr) {
     if ( cr < 1.0 ) return Math.max(200 * cr, 10);
-    return CONFIG.DND5E.CR_EXP_LEVELS[cr];
+    return CONFIG.MOJO.CR_EXP_LEVELS[cr];
   }
 
   /* -------------------------------------------- */
@@ -222,14 +222,14 @@ export default class Actor5e extends Actor {
   /* -------------------------------------------- */
 
   /**
-   * Update the actor's abilities list to match the abilities configured in `DND5E.abilities`.
+   * Update the actor's abilities list to match the abilities configured in `MOJO.abilities`.
    * Mutates the system.abilities object.
    * @protected
    */
   _prepareBaseAbilities() {
     if ( !("abilities" in this.system) ) return;
     const abilities = {};
-    for ( const key of Object.keys(CONFIG.DND5E.abilities) ) {
+    for ( const key of Object.keys(CONFIG.MOJO.abilities) ) {
       abilities[key] = this.system.abilities[key];
       if ( !abilities[key] ) {
         abilities[key] = foundry.utils.deepClone(game.system.template.Actor.templates.common.abilities.cha);
@@ -253,14 +253,14 @@ export default class Actor5e extends Actor {
   /* -------------------------------------------- */
 
   /**
-   * Update the actor's skill list to match the skills configured in `DND5E.skills`.
+   * Update the actor's skill list to match the skills configured in `MOJO.skills`.
    * Mutates the system.skills object.
    * @protected
    */
   _prepareBaseSkills() {
     if ( !("skills" in this.system) ) return;
     const skills = {};
-    for ( const [key, skill] of Object.entries(CONFIG.DND5E.skills) ) {
+    for ( const [key, skill] of Object.entries(CONFIG.MOJO.skills) ) {
       skills[key] = this.system.skills[key];
       if ( !skills[key] ) {
         skills[key] = foundry.utils.deepClone(game.system.template.Actor.templates.creature.skills.acr);
@@ -304,7 +304,7 @@ export default class Actor5e extends Actor {
       }
 
       // Attuned items
-      else if ( item.system.attunement === CONFIG.DND5E.attunementTypes.ATTUNED ) {
+      else if ( item.system.attunement === CONFIG.MOJO.attunementTypes.ATTUNED ) {
         this.system.attributes.attunement.value += 1;
       }
     }
@@ -333,7 +333,7 @@ export default class Actor5e extends Actor {
 
     // Attuned items
     this.system.attributes.attunement.value = this.items.filter(i => {
-      return i.system.attunement === CONFIG.DND5E.attunementTypes.ATTUNED;
+      return i.system.attunement === CONFIG.MOJO.attunementTypes.ATTUNED;
     }).length;
 
     // Kill Experience
@@ -373,7 +373,7 @@ export default class Actor5e extends Actor {
    * @protected
    */
   _prepareAbilities(bonusData, globalBonuses, checkBonus, originalSaves) {
-    const flags = this.flags.dnd5e ?? {};
+    const flags = this.flags.mojo ?? {};
     const dcBonus = simplifyBonus(this.system.bonuses?.spell?.dc, bonusData);
     const saveBonus = simplifyBonus(globalBonuses.save, bonusData);
     for ( const [id, abl] of Object.entries(this.system.abilities) ) {
@@ -410,10 +410,10 @@ export default class Actor5e extends Actor {
    */
   _prepareSkills(bonusData, globalBonuses, checkBonus, originalSkills) {
     if ( this.type === "vehicle" ) return;
-    const flags = this.flags.dnd5e ?? {};
+    const flags = this.flags.mojo ?? {};
 
     // Skill modifiers
-    const feats = CONFIG.DND5E.characterFlags;
+    const feats = CONFIG.MOJO.characterFlags;
     const skillBonus = simplifyBonus(globalBonuses.skill, bonusData);
     for ( const [id, skl] of Object.entries(this.system.skills) ) {
       const ability = this.system.abilities[skl.ability];
@@ -463,15 +463,15 @@ export default class Actor5e extends Actor {
     const ac = this.system.attributes.ac;
 
     // Apply automatic migrations for older data structures
-    let cfg = CONFIG.DND5E.armorClasses[ac.calc];
+    let cfg = CONFIG.MOJO.armorClasses[ac.calc];
     if ( !cfg ) {
       ac.calc = "flat";
       if ( Number.isNumeric(ac.value) ) ac.flat = Number(ac.value);
-      cfg = CONFIG.DND5E.armorClasses.flat;
+      cfg = CONFIG.MOJO.armorClasses.flat;
     }
 
     // Identify Equipped Items
-    const armorTypes = new Set(Object.keys(CONFIG.DND5E.armorTypes));
+    const armorTypes = new Set(Object.keys(CONFIG.MOJO.armorTypes));
     const {armors, shields} = this.itemTypes.equipment.reduce((obj, equip) => {
       const armor = equip.system.armor;
       if ( !equip.system.equipped || !armorTypes.has(armor?.type) ) return obj;
@@ -497,7 +497,7 @@ export default class Actor5e extends Actor {
         let formula = ac.calc === "custom" ? ac.formula : cfg.formula;
         if ( armors.length ) {
           if ( armors.length > 1 ) this._preparationWarnings.push({
-            message: game.i18n.localize("DND5E.WarnMultipleArmor"), type: "warning"
+            message: game.i18n.localize("MOJO.WarnMultipleArmor"), type: "warning"
           });
           const armorData = armors[0].system.armor;
           const isHeavy = armorData.type === "heavy";
@@ -514,9 +514,9 @@ export default class Actor5e extends Actor {
           ac.base = Roll.safeEval(replaced);
         } catch(err) {
           this._preparationWarnings.push({
-            message: game.i18n.localize("DND5E.WarnBadACFormula"), link: "armor", type: "error"
+            message: game.i18n.localize("MOJO.WarnBadACFormula"), link: "armor", type: "error"
           });
-          const replaced = Roll.replaceFormulaData(CONFIG.DND5E.armorClasses.default.formula, rollData);
+          const replaced = Roll.replaceFormulaData(CONFIG.MOJO.armorClasses.default.formula, rollData);
           ac.base = Roll.safeEval(replaced);
         }
         break;
@@ -525,7 +525,7 @@ export default class Actor5e extends Actor {
     // Equipped Shield
     if ( shields.length ) {
       if ( shields.length > 1 ) this._preparationWarnings.push({
-        message: game.i18n.localize("DND5E.WarnMultipleShields"), type: "warning"
+        message: game.i18n.localize("MOJO.WarnMultipleShields"), type: "warning"
       });
       ac.shield = shields[0].system.armor.value ?? 0;
       ac.equippedShield = shields[0];
@@ -557,21 +557,21 @@ export default class Actor5e extends Actor {
 
     // [Optional] add Currency Weight (for non-transformed actors)
     const currency = this.system.currency;
-    if ( game.settings.get("dnd5e", "currencyWeight") && currency ) {
+    if ( game.settings.get("mojo", "currencyWeight") && currency ) {
       const numCoins = Object.values(currency).reduce((val, denom) => val + Math.max(denom, 0), 0);
-      const currencyPerWeight = game.settings.get("dnd5e", "metricWeightUnits")
-        ? CONFIG.DND5E.encumbrance.currencyPerWeight.metric
-        : CONFIG.DND5E.encumbrance.currencyPerWeight.imperial;
+      const currencyPerWeight = game.settings.get("mojo", "metricWeightUnits")
+        ? CONFIG.MOJO.encumbrance.currencyPerWeight.metric
+        : CONFIG.MOJO.encumbrance.currencyPerWeight.imperial;
       weight += numCoins / currencyPerWeight;
     }
 
     // Determine the Encumbrance size class
     let mod = {tiny: 0.5, sm: 1, med: 1, lg: 2, huge: 4, grg: 8}[this.system.traits.size] || 1;
-    if ( this.flags.dnd5e?.powerfulBuild ) mod = Math.min(mod * 2, 8);
+    if ( this.flags.mojo?.powerfulBuild ) mod = Math.min(mod * 2, 8);
 
-    const strengthMultiplier = game.settings.get("dnd5e", "metricWeightUnits")
-      ? CONFIG.DND5E.encumbrance.strMultiplier.metric
-      : CONFIG.DND5E.encumbrance.strMultiplier.imperial;
+    const strengthMultiplier = game.settings.get("mojo", "metricWeightUnits")
+      ? CONFIG.MOJO.encumbrance.strMultiplier.metric
+      : CONFIG.MOJO.encumbrance.strMultiplier.imperial;
 
     // Populate final Encumbrance values
     encumbrance.value = weight.toNearest(0.1);
@@ -591,7 +591,7 @@ export default class Actor5e extends Actor {
     if ( this.type !== "character" || (this.system._source.attributes.hp.max !== null) ) return;
     const hp = this.system.attributes.hp;
 
-    const abilityId = CONFIG.DND5E.hitPointsAbility || "con";
+    const abilityId = CONFIG.MOJO.hitPointsAbility || "con";
     const abilityMod = (this.system.abilities[abilityId]?.mod ?? 0);
     const base = Object.values(this.classes).reduce((total, item) => {
       const advancement = item.advancement.byType.HitPoints?.[0];
@@ -614,10 +614,10 @@ export default class Actor5e extends Actor {
    */
   _prepareInitiative(bonusData, globalCheckBonus=0) {
     const init = this.system.attributes.init ??= {};
-    const flags = this.flags.dnd5e || {};
+    const flags = this.flags.mojo || {};
 
     // Compute initiative modifier
-    const abilityId = init.ability || CONFIG.DND5E.initiativeAbility;
+    const abilityId = init.ability || CONFIG.MOJO.initiativeAbility;
     const ability = this.system.abilities?.[abilityId] || {};
     init.mod = ability.mod ?? 0;
 
@@ -713,18 +713,18 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires while computing the spellcasting progression for each class on each actor.
-     * The actual hook names include the spellcasting type (e.g. `dnd5e.computeLeveledProgression`).
+     * The actual hook names include the spellcasting type (e.g. `mojo.computeLeveledProgression`).
      * @param {object} progression                    Spellcasting progression data. *Will be mutated.*
      * @param {Actor5e|null} [actor]                  Actor for whom the data is being prepared.
      * @param {Item5e} cls                            Class for whom this progression is being computed.
      * @param {SpellcastingDescription} spellcasting  Spellcasting descriptive object.
      * @param {number} count                          Number of classes with this type of spellcasting.
      * @returns {boolean}  Explicitly return false to prevent default progression from being calculated.
-     * @function dnd5e.computeSpellcastingProgression
+     * @function mojo.computeSpellcastingProgression
      * @memberof hookEvents
      */
     const allowed = Hooks.call(
-      `dnd5e.compute${type.capitalize()}Progression`, progression, actor, cls, spellcasting, count
+      `mojo.compute${type.capitalize()}Progression`, progression, actor, cls, spellcasting, count
     );
 
     if ( allowed && (type === "pact") ) {
@@ -745,7 +745,7 @@ export default class Actor5e extends Actor {
    * @param {number} count                          Number of classes with this type of spellcasting.
    */
   static computeLeveledProgression(progression, actor, cls, spellcasting, count) {
-    const prog = CONFIG.DND5E.spellcastingTypes.leveled.progression[spellcasting.progression];
+    const prog = CONFIG.MOJO.spellcastingTypes.leveled.progression[spellcasting.progression];
     if ( !prog ) return;
     const rounding = prog.roundUp ? Math.ceil : Math.floor;
     progression.slot += rounding(spellcasting.levels / prog.divisor ?? 1);
@@ -782,15 +782,15 @@ export default class Actor5e extends Actor {
   static prepareSpellcastingSlots(spells, type, progression, {actor}={}) {
     /**
      * A hook event that fires to convert the provided spellcasting progression into spell slots.
-     * The actual hook names include the spellcasting type (e.g. `dnd5e.prepareLeveledSlots`).
+     * The actual hook names include the spellcasting type (e.g. `mojo.prepareLeveledSlots`).
      * @param {object} spells        The `data.spells` object within actor's data. *Will be mutated.*
      * @param {Actor5e} actor        Actor for whom the data is being prepared.
      * @param {object} progression   Spellcasting progression data.
      * @returns {boolean}            Explicitly return false to prevent default preparation from being performed.
-     * @function dnd5e.prepareSpellcastingSlots
+     * @function mojo.prepareSpellcastingSlots
      * @memberof hookEvents
      */
-    const allowed = Hooks.call(`dnd5e.prepare${type.capitalize()}Slots`, spells, actor, progression);
+    const allowed = Hooks.call(`mojo.prepare${type.capitalize()}Slots`, spells, actor, progression);
 
     if ( allowed && (type === "pact") ) this.preparePactSlots(spells, actor, progression);
     else if ( allowed && (type === "leveled") ) this.prepareLeveledSlots(spells, actor, progression);
@@ -805,8 +805,8 @@ export default class Actor5e extends Actor {
    * @param {object} progression   Spellcasting progression data.
    */
   static prepareLeveledSlots(spells, actor, progression) {
-    const levels = Math.clamped(progression.slot, 0, CONFIG.DND5E.maxLevel);
-    const slots = CONFIG.DND5E.SPELL_SLOT_TABLE[Math.min(levels, CONFIG.DND5E.SPELL_SLOT_TABLE.length) - 1] ?? [];
+    const levels = Math.clamped(progression.slot, 0, CONFIG.MOJO.maxLevel);
+    const slots = CONFIG.MOJO.SPELL_SLOT_TABLE[Math.min(levels, CONFIG.MOJO.SPELL_SLOT_TABLE.length) - 1] ?? [];
     for ( const [n, slot] of Object.entries(spells) ) {
       const level = parseInt(n.slice(-1));
       if ( Number.isNaN(level) ) continue;
@@ -830,7 +830,7 @@ export default class Actor5e extends Actor {
     // - pact.value: Currently available pact slots
     // - pact.override: Override number of available spell slots
 
-    let pactLevel = Math.clamped(progression.pact, 0, CONFIG.DND5E.maxLevel);
+    let pactLevel = Math.clamped(progression.pact, 0, CONFIG.MOJO.maxLevel);
     spells.pact ??= {};
     const override = Number.isNumeric(spells.pact.override) ? parseInt(spells.pact.override) : null;
 
@@ -868,7 +868,7 @@ export default class Actor5e extends Actor {
 
     // Configure prototype token settings
     if ( "size" in (this.system.traits || {}) ) {
-      const s = CONFIG.DND5E.tokenSizes[this.system.traits.size || "med"];
+      const s = CONFIG.MOJO.tokenSizes[this.system.traits.size || "med"];
       const prototypeToken = {width: s, height: s};
       if ( this.type === "character" ) Object.assign(prototypeToken, {
         sight: { enabled: true }, actorLink: true, disposition: 1
@@ -887,7 +887,7 @@ export default class Actor5e extends Actor {
     if ( "size" in (this.system.traits || {}) ) {
       const newSize = foundry.utils.getProperty(changed, "system.traits.size");
       if ( newSize && (newSize !== this.system.traits?.size) ) {
-        let size = CONFIG.DND5E.tokenSizes[newSize];
+        let size = CONFIG.MOJO.tokenSizes[newSize];
         if ( !foundry.utils.hasProperty(changed, "prototypeToken.width") ) {
           changed.prototypeToken ||= {};
           changed.prototypeToken.height = size;
@@ -1009,8 +1009,8 @@ export default class Actor5e extends Actor {
    * @private
    */
   _isRemarkableAthlete(ability) {
-    return this.getFlag("dnd5e", "remarkableAthlete")
-      && CONFIG.DND5E.characterFlags.remarkableAthlete.abilities.includes(ability);
+    return this.getFlag("mojo", "remarkableAthlete")
+      && CONFIG.MOJO.characterFlags.remarkableAthlete.abilities.includes(ability);
   }
 
   /* -------------------------------------------- */
@@ -1065,46 +1065,46 @@ export default class Actor5e extends Actor {
     }
 
     // Reliable Talent applies to any skill check we have full or better proficiency in
-    const reliableTalent = (skl.value >= 1 && this.getFlag("dnd5e", "reliableTalent"));
+    const reliableTalent = (skl.value >= 1 && this.getFlag("mojo", "reliableTalent"));
 
     // Roll and return
-    const flavor = game.i18n.format("DND5E.SkillPromptTitle", {skill: CONFIG.DND5E.skills[skillId]?.label ?? ""});
+    const flavor = game.i18n.format("MOJO.SkillPromptTitle", {skill: CONFIG.MOJO.skills[skillId]?.label ?? ""});
     const rollData = foundry.utils.mergeObject({
       data: data,
       title: `${flavor}: ${this.name}`,
       flavor,
       chooseModifier: true,
-      halflingLucky: this.getFlag("dnd5e", "halflingLucky"),
+      halflingLucky: this.getFlag("mojo", "halflingLucky"),
       reliableTalent,
       messageData: {
         speaker: options.speaker || ChatMessage.getSpeaker({actor: this}),
-        "flags.dnd5e.roll": {type: "skill", skillId }
+        "flags.mojo.roll": {type: "skill", skillId }
       }
     }, options);
     rollData.parts = parts.concat(options.parts ?? []);
 
     /**
      * A hook event that fires before a skill check is rolled for an Actor.
-     * @function dnd5e.preRollSkill
+     * @function mojo.preRollSkill
      * @memberof hookEvents
      * @param {Actor5e} actor                Actor for which the skill check is being rolled.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
-     * @param {string} skillId               ID of the skill being rolled as defined in `DND5E.skills`.
+     * @param {string} skillId               ID of the skill being rolled as defined in `MOJO.skills`.
      * @returns {boolean}                    Explicitly return `false` to prevent skill check from being rolled.
      */
-    if ( Hooks.call("dnd5e.preRollSkill", this, rollData, skillId) === false ) return;
+    if ( Hooks.call("mojo.preRollSkill", this, rollData, skillId) === false ) return;
 
     const roll = await d20Roll(rollData);
 
     /**
      * A hook event that fires after a skill check has been rolled for an Actor.
-     * @function dnd5e.rollSkill
+     * @function mojo.rollSkill
      * @memberof hookEvents
      * @param {Actor5e} actor   Actor for which the skill check has been rolled.
      * @param {D20Roll} roll    The resulting roll.
-     * @param {string} skillId  ID of the skill that was rolled as defined in `DND5E.skills`.
+     * @param {string} skillId  ID of the skill that was rolled as defined in `MOJO.skills`.
      */
-    if ( roll ) Hooks.callAll("dnd5e.rollSkill", this, roll, skillId);
+    if ( roll ) Hooks.callAll("mojo.rollSkill", this, roll, skillId);
 
     return roll;
   }
@@ -1118,17 +1118,17 @@ export default class Actor5e extends Actor {
    * @param {object} options      Options which configure how ability tests or saving throws are rolled
    */
   rollAbility(abilityId, options={}) {
-    const label = CONFIG.DND5E.abilities[abilityId] ?? "";
+    const label = CONFIG.MOJO.abilities[abilityId] ?? "";
     new Dialog({
-      title: `${game.i18n.format("DND5E.AbilityPromptTitle", {ability: label})}: ${this.name}`,
-      content: `<p>${game.i18n.format("DND5E.AbilityPromptText", {ability: label})}</p>`,
+      title: `${game.i18n.format("MOJO.AbilityPromptTitle", {ability: label})}: ${this.name}`,
+      content: `<p>${game.i18n.format("MOJO.AbilityPromptText", {ability: label})}</p>`,
       buttons: {
         test: {
-          label: game.i18n.localize("DND5E.ActionAbil"),
+          label: game.i18n.localize("MOJO.ActionAbil"),
           callback: () => this.rollAbilityTest(abilityId, options)
         },
         save: {
-          label: game.i18n.localize("DND5E.ActionSave"),
+          label: game.i18n.localize("MOJO.ActionSave"),
           callback: () => this.rollAbilitySave(abilityId, options)
         }
       }
@@ -1145,7 +1145,7 @@ export default class Actor5e extends Actor {
    * @returns {Promise<D20Roll>}  A Promise which resolves to the created Roll instance
    */
   async rollAbilityTest(abilityId, options={}) {
-    const label = CONFIG.DND5E.abilities[abilityId] ?? "";
+    const label = CONFIG.MOJO.abilities[abilityId] ?? "";
     const abl = this.system.abilities[abilityId];
     const globalBonuses = this.system.bonuses?.abilities ?? {};
     const parts = [];
@@ -1175,41 +1175,41 @@ export default class Actor5e extends Actor {
     }
 
     // Roll and return
-    const flavor = game.i18n.format("DND5E.AbilityPromptTitle", {ability: label});
+    const flavor = game.i18n.format("MOJO.AbilityPromptTitle", {ability: label});
     const rollData = foundry.utils.mergeObject({
       data,
       title: `${flavor}: ${this.name}`,
       flavor,
-      halflingLucky: this.getFlag("dnd5e", "halflingLucky"),
+      halflingLucky: this.getFlag("mojo", "halflingLucky"),
       messageData: {
         speaker: options.speaker || ChatMessage.getSpeaker({actor: this}),
-        "flags.dnd5e.roll": {type: "ability", abilityId }
+        "flags.mojo.roll": {type: "ability", abilityId }
       }
     }, options);
     rollData.parts = parts.concat(options.parts ?? []);
 
     /**
      * A hook event that fires before an ability test is rolled for an Actor.
-     * @function dnd5e.preRollAbilityTest
+     * @function mojo.preRollAbilityTest
      * @memberof hookEvents
      * @param {Actor5e} actor                Actor for which the ability test is being rolled.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
-     * @param {string} abilityId             ID of the ability being rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId             ID of the ability being rolled as defined in `MOJO.abilities`.
      * @returns {boolean}                    Explicitly return `false` to prevent ability test from being rolled.
      */
-    if ( Hooks.call("dnd5e.preRollAbilityTest", this, rollData, abilityId) === false ) return;
+    if ( Hooks.call("mojo.preRollAbilityTest", this, rollData, abilityId) === false ) return;
 
     const roll = await d20Roll(rollData);
 
     /**
      * A hook event that fires after an ability test has been rolled for an Actor.
-     * @function dnd5e.rollAbilityTest
+     * @function mojo.rollAbilityTest
      * @memberof hookEvents
      * @param {Actor5e} actor     Actor for which the ability test has been rolled.
      * @param {D20Roll} roll      The resulting roll.
-     * @param {string} abilityId  ID of the ability that was rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId  ID of the ability that was rolled as defined in `MOJO.abilities`.
      */
-    if ( roll ) Hooks.callAll("dnd5e.rollAbilityTest", this, roll, abilityId);
+    if ( roll ) Hooks.callAll("mojo.rollAbilityTest", this, roll, abilityId);
 
     return roll;
   }
@@ -1224,7 +1224,7 @@ export default class Actor5e extends Actor {
    * @returns {Promise<D20Roll>}  A Promise which resolves to the created Roll instance
    */
   async rollAbilitySave(abilityId, options={}) {
-    const label = CONFIG.DND5E.abilities[abilityId] ?? "";
+    const label = CONFIG.MOJO.abilities[abilityId] ?? "";
     const abl = this.system.abilities[abilityId];
     const globalBonuses = this.system.bonuses?.abilities ?? {};
     const parts = [];
@@ -1254,41 +1254,41 @@ export default class Actor5e extends Actor {
     }
 
     // Roll and return
-    const flavor = game.i18n.format("DND5E.SavePromptTitle", {ability: label});
+    const flavor = game.i18n.format("MOJO.SavePromptTitle", {ability: label});
     const rollData = foundry.utils.mergeObject({
       data,
       title: `${flavor}: ${this.name}`,
       flavor,
-      halflingLucky: this.getFlag("dnd5e", "halflingLucky"),
+      halflingLucky: this.getFlag("mojo", "halflingLucky"),
       messageData: {
         speaker: options.speaker || ChatMessage.getSpeaker({actor: this}),
-        "flags.dnd5e.roll": {type: "save", abilityId }
+        "flags.mojo.roll": {type: "save", abilityId }
       }
     }, options);
     rollData.parts = parts.concat(options.parts ?? []);
 
     /**
      * A hook event that fires before an ability save is rolled for an Actor.
-     * @function dnd5e.preRollAbilitySave
+     * @function mojo.preRollAbilitySave
      * @memberof hookEvents
      * @param {Actor5e} actor                Actor for which the ability save is being rolled.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
-     * @param {string} abilityId             ID of the ability being rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId             ID of the ability being rolled as defined in `MOJO.abilities`.
      * @returns {boolean}                    Explicitly return `false` to prevent ability save from being rolled.
      */
-    if ( Hooks.call("dnd5e.preRollAbilitySave", this, rollData, abilityId) === false ) return;
+    if ( Hooks.call("mojo.preRollAbilitySave", this, rollData, abilityId) === false ) return;
 
     const roll = await d20Roll(rollData);
 
     /**
      * A hook event that fires after an ability save has been rolled for an Actor.
-     * @function dnd5e.rollAbilitySave
+     * @function mojo.rollAbilitySave
      * @memberof hookEvents
      * @param {Actor5e} actor     Actor for which the ability save has been rolled.
      * @param {D20Roll} roll      The resulting roll.
-     * @param {string} abilityId  ID of the ability that was rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId  ID of the ability that was rolled as defined in `MOJO.abilities`.
      */
-    if ( roll ) Hooks.callAll("dnd5e.rollAbilitySave", this, roll, abilityId);
+    if ( roll ) Hooks.callAll("mojo.rollAbilitySave", this, roll, abilityId);
 
     return roll;
   }
@@ -1305,7 +1305,7 @@ export default class Actor5e extends Actor {
 
     // Display a warning if we are not at zero HP or if we already have reached 3
     if ( (this.system.attributes.hp.value > 0) || (death.failure >= 3) || (death.success >= 3) ) {
-      ui.notifications.warn(game.i18n.localize("DND5E.DeathSaveUnnecessary"));
+      ui.notifications.warn(game.i18n.localize("MOJO.DeathSaveUnnecessary"));
       return null;
     }
 
@@ -1316,7 +1316,7 @@ export default class Actor5e extends Actor {
     const data = this.getRollData();
 
     // Diamond Soul adds proficiency
-    if ( this.getFlag("dnd5e", "diamondSoul") ) {
+    if ( this.getFlag("mojo", "diamondSoul") ) {
       parts.push("@prof");
       data.prof = new Proficiency(this.system.attributes.prof, 1).term;
     }
@@ -1328,29 +1328,29 @@ export default class Actor5e extends Actor {
     }
 
     // Evaluate the roll
-    const flavor = game.i18n.localize("DND5E.DeathSavingThrow");
+    const flavor = game.i18n.localize("MOJO.DeathSavingThrow");
     const rollData = foundry.utils.mergeObject({
       data,
       title: `${flavor}: ${this.name}`,
       flavor,
-      halflingLucky: this.getFlag("dnd5e", "halflingLucky"),
+      halflingLucky: this.getFlag("mojo", "halflingLucky"),
       targetValue: 10,
       messageData: {
         speaker: speaker,
-        "flags.dnd5e.roll": {type: "death"}
+        "flags.mojo.roll": {type: "death"}
       }
     }, options);
     rollData.parts = parts.concat(options.parts ?? []);
 
     /**
      * A hook event that fires before a death saving throw is rolled for an Actor.
-     * @function dnd5e.preRollDeathSave
+     * @function mojo.preRollDeathSave
      * @memberof hookEvents
      * @param {Actor5e} actor                Actor for which the death saving throw is being rolled.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
      * @returns {boolean}                    Explicitly return `false` to prevent death saving throw from being rolled.
      */
-    if ( Hooks.call("dnd5e.preRollDeathSave", this, rollData) === false ) return;
+    if ( Hooks.call("mojo.preRollDeathSave", this, rollData) === false ) return;
 
     const roll = await d20Roll(rollData);
     if ( !roll ) return null;
@@ -1369,7 +1369,7 @@ export default class Actor5e extends Actor {
           "system.attributes.death.failure": 0,
           "system.attributes.hp.value": 1
         };
-        details.chatString = "DND5E.DeathSaveCriticalSuccess";
+        details.chatString = "MOJO.DeathSaveCriticalSuccess";
       }
 
       // 3 Successes = survive and reset checks
@@ -1378,7 +1378,7 @@ export default class Actor5e extends Actor {
           "system.attributes.death.success": 0,
           "system.attributes.death.failure": 0
         };
-        details.chatString = "DND5E.DeathSaveSuccess";
+        details.chatString = "MOJO.DeathSaveSuccess";
       }
 
       // Increment successes
@@ -1390,14 +1390,14 @@ export default class Actor5e extends Actor {
       let failures = (death.failure || 0) + (roll.isFumble ? 2 : 1);
       details.updates = {"system.attributes.death.failure": Math.clamped(failures, 0, 3)};
       if ( failures >= 3 ) {  // 3 Failures = death
-        details.chatString = "DND5E.DeathSaveFailure";
+        details.chatString = "MOJO.DeathSaveFailure";
       }
     }
 
     /**
      * A hook event that fires after a death saving throw has been rolled for an Actor, but before
      * updates have been performed.
-     * @function dnd5e.rollDeathSave
+     * @function mojo.rollDeathSave
      * @memberof hookEvents
      * @param {Actor5e} actor              Actor for which the death saving throw has been rolled.
      * @param {D20Roll} roll               The resulting roll.
@@ -1407,7 +1407,7 @@ export default class Actor5e extends Actor {
      *                                     no chat message will be displayed.
      * @returns {boolean}                  Explicitly return `false` to prevent updates from being performed.
      */
-    if ( Hooks.call("dnd5e.rollDeathSave", this, roll, details) === false ) return roll;
+    if ( Hooks.call("mojo.rollDeathSave", this, roll, details) === false ) return roll;
 
     if ( !foundry.utils.isEmpty(details.updates) ) await this.update(details.updates);
 
@@ -1438,10 +1438,10 @@ export default class Actor5e extends Actor {
 
     // Obtain required data
     const init = this.system.attributes?.init;
-    const abilityId = init?.ability || CONFIG.DND5E.initiativeAbility;
+    const abilityId = init?.ability || CONFIG.MOJO.initiativeAbility;
     const data = this.getRollData();
-    const flags = this.flags.dnd5e || {};
-    if ( flags.initiativeAdv ) options.advantageMode ??= dnd5e.dice.D20Roll.ADV_MODE.ADVANTAGE;
+    const flags = this.flags.mojo || {};
+    if ( flags.initiativeAdv ) options.advantageMode ??= mojo.dice.D20Roll.ADV_MODE.ADVANTAGE;
 
     // Standard initiative formula
     const parts = ["1d20"];
@@ -1484,14 +1484,14 @@ export default class Actor5e extends Actor {
     }
 
     // Ability score tiebreaker
-    const tiebreaker = game.settings.get("dnd5e", "initiativeDexTiebreaker");
+    const tiebreaker = game.settings.get("mojo", "initiativeDexTiebreaker");
     if ( tiebreaker && ("abilities" in this.system) ) {
       const abilityValue = this.system.abilities[abilityId]?.value;
       if ( Number.isNumeric(abilityValue) ) parts.push(String(abilityValue / 100));
     }
 
     options = foundry.utils.mergeObject({
-      flavor: options.flavor ?? game.i18n.localize("DND5E.Initiative"),
+      flavor: options.flavor ?? game.i18n.localize("MOJO.Initiative"),
       halflingLucky: flags.halflingLucky ?? false,
       critical: null,
       fumble: null
@@ -1514,9 +1514,9 @@ export default class Actor5e extends Actor {
     const roll = this.getInitiativeRoll(rollOptions);
     const choice = await roll.configureDialog({
       defaultRollMode: game.settings.get("core", "rollMode"),
-      title: `${game.i18n.localize("DND5E.InitiativeRoll")}: ${this.name}`,
+      title: `${game.i18n.localize("MOJO.InitiativeRoll")}: ${this.name}`,
       chooseModifier: false,
-      defaultAction: rollOptions.advantageMode ?? dnd5e.dice.D20Roll.ADV_MODE.NORMAL
+      defaultAction: rollOptions.advantageMode ?? mojo.dice.D20Roll.ADV_MODE.NORMAL
     });
     if ( choice === null ) return; // Closed dialog
 
@@ -1532,12 +1532,12 @@ export default class Actor5e extends Actor {
   async rollInitiative(options={}) {
     /**
      * A hook event that fires before initiative is rolled for an Actor.
-     * @function dnd5e.preRollInitiative
+     * @function mojo.preRollInitiative
      * @memberof hookEvents
      * @param {Actor5e} actor  The Actor that is rolling initiative.
      * @param {D20Roll} roll   The initiative roll.
      */
-    if ( Hooks.call("dnd5e.preRollInitiative", this, this._cachedInitiativeRoll) === false ) return;
+    if ( Hooks.call("mojo.preRollInitiative", this, this._cachedInitiativeRoll) === false ) return;
 
     const combat = await super.rollInitiative(options);
     const combatants = this.isToken ? this.getActiveTokens(false, true).reduce((arr, t) => {
@@ -1548,12 +1548,12 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires after an Actor has rolled for initiative.
-     * @function dnd5e.rollInitiative
+     * @function mojo.rollInitiative
      * @memberof hookEvents
      * @param {Actor5e} actor           The Actor that rolled initiative.
      * @param {Combatant[]} combatants  The associated Combatants in the Combat.
      */
-    Hooks.callAll("dnd5e.rollInitiative", this, combatants);
+    Hooks.callAll("mojo.rollInitiative", this, combatants);
     return combat;
   }
 
@@ -1582,12 +1582,12 @@ export default class Actor5e extends Actor {
 
     // If no class is available, display an error notification
     if ( !cls ) {
-      ui.notifications.error(game.i18n.format("DND5E.HitDiceWarn", {name: this.name, formula: denomination}));
+      ui.notifications.error(game.i18n.format("MOJO.HitDiceWarn", {name: this.name, formula: denomination}));
       return null;
     }
 
     // Prepare roll data
-    const flavor = game.i18n.localize("DND5E.HitDiceRoll");
+    const flavor = game.i18n.localize("MOJO.HitDiceRoll");
     const rollConfig = foundry.utils.mergeObject({
       formula: `max(0, 1${denomination} + @abilities.con.mod)`,
       data: this.getRollData(),
@@ -1597,13 +1597,13 @@ export default class Actor5e extends Actor {
         flavor,
         title: `${flavor}: ${this.name}`,
         rollMode: game.settings.get("core", "rollMode"),
-        "flags.dnd5e.roll": {type: "hitDie"}
+        "flags.mojo.roll": {type: "hitDie"}
       }
     }, options);
 
     /**
      * A hook event that fires before a hit die is rolled for an Actor.
-     * @function dnd5e.preRollHitDie
+     * @function mojo.preRollHitDie
      * @memberof hookEvents
      * @param {Actor5e} actor               Actor for which the hit die is to be rolled.
      * @param {object} config               Configuration data for the pending roll.
@@ -1614,7 +1614,7 @@ export default class Actor5e extends Actor {
      * @param {string} denomination         Size of hit die to be rolled.
      * @returns {boolean}                   Explicitly return `false` to prevent hit die from being rolled.
      */
-    if ( Hooks.call("dnd5e.preRollHitDie", this, rollConfig, denomination) === false ) return;
+    if ( Hooks.call("mojo.preRollHitDie", this, rollConfig, denomination) === false ) return;
 
     const roll = await new Roll(rollConfig.formula, rollConfig.data).roll({async: true});
     if ( rollConfig.chatMessage ) roll.toMessage(rollConfig.messageData);
@@ -1628,7 +1628,7 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires after a hit die has been rolled for an Actor, but before updates have been performed.
-     * @function dnd5e.rollHitDie
+     * @function mojo.rollHitDie
      * @memberof hookEvents
      * @param {Actor5e} actor         Actor for which the hit die has been rolled.
      * @param {Roll} roll             The resulting roll.
@@ -1637,7 +1637,7 @@ export default class Actor5e extends Actor {
      * @param {object} updates.class  Updates that will be applied to the class.
      * @returns {boolean}             Explicitly return `false` to prevent updates from being performed.
      */
-    if ( Hooks.call("dnd5e.rollHitDie", this, roll, updates) === false ) return roll;
+    if ( Hooks.call("mojo.rollHitDie", this, roll, updates) === false ) return roll;
 
     // Re-evaluate dhp in the event that it was changed in the previous hook
     const updateOptions = { dhp: (updates.actor?.["system.attributes.hp.value"] ?? hp.value) - hp.value };
@@ -1657,7 +1657,7 @@ export default class Actor5e extends Actor {
    * @param {object} options
    * @param {boolean} [options.chatMessage=true]  Display the chat message for this roll.
    * @returns {Promise<Roll>}                     The completed roll.
-   * @see {@link dnd5e.preRollClassHitPoints}
+   * @see {@link mojo.preRollClassHitPoints}
    */
   async rollClassHitPoints(item, { chatMessage=true }={}) {
     if ( item.type !== "class" ) throw new Error("Hit points can only be rolled for a class item.");
@@ -1666,17 +1666,17 @@ export default class Actor5e extends Actor {
       data: item.getRollData(),
       chatMessage
     };
-    const flavor = game.i18n.format("DND5E.AdvancementHitPointsRollMessage", { class: item.name });
+    const flavor = game.i18n.format("MOJO.AdvancementHitPointsRollMessage", { class: item.name });
     const messageData = {
       title: `${flavor}: ${this.name}`,
       flavor,
       speaker: ChatMessage.getSpeaker({ actor: this }),
-      "flags.dnd5e.roll": { type: "hitPoints" }
+      "flags.mojo.roll": { type: "hitPoints" }
     };
 
     /**
      * A hook event that fires before hit points are rolled for a character's class.
-     * @function dnd5e.preRollClassHitPoints
+     * @function mojo.preRollClassHitPoints
      * @memberof hookEvents
      * @param {Actor5e} actor            Actor for which the hit points are being rolled.
      * @param {Item5e} item              The class item whose hit dice will be rolled.
@@ -1685,19 +1685,19 @@ export default class Actor5e extends Actor {
      * @param {object} rollData.data     The data object against which to parse attributes within the formula.
      * @param {object} messageData       The data object to use when creating the message.
      */
-    Hooks.callAll("dnd5e.preRollClassHitPoints", this, item, rollData, messageData);
+    Hooks.callAll("mojo.preRollClassHitPoints", this, item, rollData, messageData);
 
     const roll = new Roll(rollData.formula, rollData.data);
     await roll.evaluate({async: true});
 
     /**
      * A hook event that fires after hit points haven been rolled for a character's class.
-     * @function dnd5e.rollClassHitPoints
+     * @function mojo.rollClassHitPoints
      * @memberof hookEvents
      * @param {Actor5e} actor  Actor for which the hit points have been rolled.
      * @param {Roll} roll      The resulting roll.
      */
-    Hooks.callAll("dnd5e.rollClassHitPoints", this, roll);
+    Hooks.callAll("mojo.rollClassHitPoints", this, roll);
 
     if ( rollData.chatMessage ) await roll.toMessage(messageData);
     return roll;
@@ -1710,7 +1710,7 @@ export default class Actor5e extends Actor {
    * @param {object} options
    * @param {boolean} [options.chatMessage=true]  Display the chat message for this roll.
    * @returns {Promise<Roll>}                     The completed roll.
-   * @see {@link dnd5e.preRollNPCHitPoints}
+   * @see {@link mojo.preRollNPCHitPoints}
    */
   async rollNPCHitPoints({ chatMessage=true }={}) {
     if ( this.type !== "npc" ) throw new Error("NPC hit points can only be rolled for NPCs");
@@ -1719,17 +1719,17 @@ export default class Actor5e extends Actor {
       data: this.getRollData(),
       chatMessage
     };
-    const flavor = game.i18n.format("DND5E.HPFormulaRollMessage");
+    const flavor = game.i18n.format("MOJO.HPFormulaRollMessage");
     const messageData = {
       title: `${flavor}: ${this.name}`,
       flavor,
       speaker: ChatMessage.getSpeaker({ actor: this }),
-      "flags.dnd5e.roll": { type: "hitPoints" }
+      "flags.mojo.roll": { type: "hitPoints" }
     };
 
     /**
      * A hook event that fires before hit points are rolled for an NPC.
-     * @function dnd5e.preRollNPCHitPoints
+     * @function mojo.preRollNPCHitPoints
      * @memberof hookEvents
      * @param {Actor5e} actor            Actor for which the hit points are being rolled.
      * @param {object} rollData
@@ -1737,19 +1737,19 @@ export default class Actor5e extends Actor {
      * @param {object} rollData.data     The data object against which to parse attributes within the formula.
      * @param {object} messageData       The data object to use when creating the message.
      */
-    Hooks.callAll("dnd5e.preRollNPCHitPoints", this, rollData, messageData);
+    Hooks.callAll("mojo.preRollNPCHitPoints", this, rollData, messageData);
 
     const roll = new Roll(rollData.formula, rollData.data);
     await roll.evaluate({async: true});
 
     /**
      * A hook event that fires after hit points are rolled for an NPC.
-     * @function dnd5e.rollNPCHitPoints
+     * @function mojo.rollNPCHitPoints
      * @memberof hookEvents
      * @param {Actor5e} actor  Actor for which the hit points have been rolled.
      * @param {Roll} roll      The resulting roll.
      */
-    Hooks.callAll("dnd5e.rollNPCHitPoints", this, roll);
+    Hooks.callAll("mojo.rollNPCHitPoints", this, roll);
 
     if ( rollData.chatMessage ) await roll.toMessage(messageData);
     return roll;
@@ -1799,13 +1799,13 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires before a short rest is started.
-     * @function dnd5e.preShortRest
+     * @function mojo.preShortRest
      * @memberof hookEvents
      * @param {Actor5e} actor             The actor that is being rested.
      * @param {RestConfiguration} config  Configuration options for the rest.
      * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
      */
-    if ( Hooks.call("dnd5e.preShortRest", this, config) === false ) return;
+    if ( Hooks.call("mojo.preShortRest", this, config) === false ) return;
 
     // Take note of the initial hit points and number of hit dice the Actor has
     const hd0 = this.system.attributes.hd;
@@ -1840,13 +1840,13 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires before a long rest is started.
-     * @function dnd5e.preLongRest
+     * @function mojo.preLongRest
      * @memberof hookEvents
      * @param {Actor5e} actor             The actor that is being rested.
      * @param {RestConfiguration} config  Configuration options for the rest.
      * @returns {boolean}                 Explicitly return `false` to prevent the rest from being started.
      */
-    if ( Hooks.call("dnd5e.preLongRest", this, config) === false ) return;
+    if ( Hooks.call("mojo.preLongRest", this, config) === false ) return;
 
     if ( config.dialog ) {
       try { config.newDay = await LongRestDialog.longRestDialog({actor: this}); }
@@ -1902,13 +1902,13 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires after rest result is calculated, but before any updates are performed.
-     * @function dnd5e.preRestCompleted
+     * @function mojo.preRestCompleted
      * @memberof hookEvents
      * @param {Actor5e} actor      The actor that is being rested.
      * @param {RestResult} result  Details on the rest to be completed.
      * @returns {boolean}          Explicitly return `false` to prevent the rest updates from being performed.
      */
-    if ( Hooks.call("dnd5e.preRestCompleted", this, result) === false ) return result;
+    if ( Hooks.call("mojo.preRestCompleted", this, result) === false ) return result;
 
     // Perform updates
     await this.update(result.updateData);
@@ -1919,12 +1919,12 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires when the rest process is completed for an actor.
-     * @function dnd5e.restCompleted
+     * @function mojo.restCompleted
      * @memberof hookEvents
      * @param {Actor5e} actor      The actor that just completed resting.
      * @param {RestResult} result  Details on the rest completed.
      */
-    Hooks.callAll("dnd5e.restCompleted", this, result);
+    Hooks.callAll("mojo.restCompleted", this, result);
 
     // Return data summarizing the rest effects
     return result;
@@ -1948,24 +1948,24 @@ export default class Actor5e extends Actor {
 
     // Summarize the rest duration
     let restFlavor;
-    switch (game.settings.get("dnd5e", "restVariant")) {
+    switch (game.settings.get("mojo", "restVariant")) {
       case "normal":
-        restFlavor = (longRest && newDay) ? "DND5E.LongRestOvernight" : `DND5E.${length}RestNormal`;
+        restFlavor = (longRest && newDay) ? "MOJO.LongRestOvernight" : `MOJO.${length}RestNormal`;
         break;
       case "gritty":
-        restFlavor = (!longRest && newDay) ? "DND5E.ShortRestOvernight" : `DND5E.${length}RestGritty`;
+        restFlavor = (!longRest && newDay) ? "MOJO.ShortRestOvernight" : `MOJO.${length}RestGritty`;
         break;
       case "epic":
-        restFlavor = `DND5E.${length}RestEpic`;
+        restFlavor = `MOJO.${length}RestEpic`;
         break;
     }
 
     // Determine the chat message to display
     let message;
-    if ( diceRestored && healthRestored ) message = `DND5E.${length}RestResult`;
-    else if ( longRest && !diceRestored && healthRestored ) message = "DND5E.LongRestResultHitPoints";
-    else if ( longRest && diceRestored && !healthRestored ) message = "DND5E.LongRestResultHitDice";
-    else message = `DND5E.${length}RestResultShort`;
+    if ( diceRestored && healthRestored ) message = `MOJO.${length}RestResult`;
+    else if ( longRest && !diceRestored && healthRestored ) message = "MOJO.LongRestResultHitPoints";
+    else if ( longRest && diceRestored && !healthRestored ) message = "MOJO.LongRestResultHitDice";
+    else message = `MOJO.${length}RestResultShort`;
 
     // Create a chat message
     let chatData = {
@@ -2133,7 +2133,7 @@ export default class Actor5e extends Actor {
       // Items that roll to gain charges on a new day
       if ( recoverDailyUses && uses?.recovery && (uses?.per === "charges") ) {
         const roll = new Roll(uses.recovery, this.getRollData());
-        if ( recoverLongRestUses && (game.settings.get("dnd5e", "restVariant") === "gritty") ) {
+        if ( recoverLongRestUses && (game.settings.get("mojo", "restVariant") === "gritty") ) {
           roll.alter(7, 0, {multiplyNumeric: true});
         }
 
@@ -2141,7 +2141,7 @@ export default class Actor5e extends Actor {
         try {
           total = (await roll.evaluate({async: true})).total;
         } catch(err) {
-          ui.notifications.warn(game.i18n.format("DND5E.ItemRecoveryFormulaWarning", {
+          ui.notifications.warn(game.i18n.format("MOJO.ItemRecoveryFormulaWarning", {
             name: item.name,
             formula: uses.recovery
           }));
@@ -2151,7 +2151,7 @@ export default class Actor5e extends Actor {
         if ( newValue !== uses.value ) {
           const diff = newValue - uses.value;
           const isMax = newValue === uses.max;
-          const locKey = `DND5E.Item${diff < 0 ? "Loss" : "Recovery"}Roll${isMax ? "Max" : ""}`;
+          const locKey = `MOJO.Item${diff < 0 ? "Loss" : "Recovery"}Roll${isMax ? "Max" : ""}`;
           updates.push({_id: item.id, "system.uses.value": newValue});
           rolls.push(roll);
           await roll.toMessage({
@@ -2171,12 +2171,12 @@ export default class Actor5e extends Actor {
 
   /**
    * Convert all carried currency to the highest possible denomination using configured conversion rates.
-   * See CONFIG.DND5E.currencies for configuration.
+   * See CONFIG.MOJO.currencies for configuration.
    * @returns {Promise<Actor5e>}
    */
   convertCurrency() {
     const currency = foundry.utils.deepClone(this.system.currency);
-    const currencies = Object.entries(CONFIG.DND5E.currencies);
+    const currencies = Object.entries(CONFIG.MOJO.currencies);
     currencies.sort((a, b) => a[1].conversion - b[1].conversion);
 
     // Count total converted units of the base currency
@@ -2243,20 +2243,20 @@ export default class Actor5e extends Actor {
     transformTokens=true}={}, {renderSheet=true}={}) {
 
     // Ensure the player is allowed to polymorph
-    const allowed = game.settings.get("dnd5e", "allowPolymorphing");
+    const allowed = game.settings.get("mojo", "allowPolymorphing");
     if ( !allowed && !game.user.isGM ) {
-      return ui.notifications.warn(game.i18n.localize("DND5E.PolymorphWarn"));
+      return ui.notifications.warn(game.i18n.localize("MOJO.PolymorphWarn"));
     }
 
     // Get the original Actor data and the new source data
     const o = this.toObject();
-    o.flags.dnd5e = o.flags.dnd5e || {};
-    o.flags.dnd5e.transformOptions = {mergeSkills, mergeSaves};
+    o.flags.mojo = o.flags.mojo || {};
+    o.flags.mojo.transformOptions = {mergeSkills, mergeSaves};
     const source = target.toObject();
 
     if ( keepSelf ) {
       o.img = source.img;
-      o.name = `${o.name} (${game.i18n.localize("DND5E.PolymorphSelf")})`;
+      o.name = `${o.name} (${game.i18n.localize("MOJO.PolymorphSelf")})`;
     }
 
     // Prepare new data to merge from the source
@@ -2334,7 +2334,7 @@ export default class Actor5e extends Actor {
       if ( !keepClass && d.system.details.cr ) {
         d.items.push({
           type: "class",
-          name: game.i18n.localize("DND5E.PolymorphTmpClass"),
+          name: game.i18n.localize("MOJO.PolymorphTmpClass"),
           data: { levels: d.system.details.cr }
         });
       }
@@ -2373,20 +2373,20 @@ export default class Actor5e extends Actor {
     }
 
     // Set new data flags
-    if ( !this.isPolymorphed || !d.flags.dnd5e.originalActor ) d.flags.dnd5e.originalActor = this.id;
-    d.flags.dnd5e.isPolymorphed = true;
+    if ( !this.isPolymorphed || !d.flags.mojo.originalActor ) d.flags.mojo.originalActor = this.id;
+    d.flags.mojo.isPolymorphed = true;
 
     // Gather previous actor data
-    const previousActorIds = this.getFlag("dnd5e", "previousActorIds") || [];
+    const previousActorIds = this.getFlag("mojo", "previousActorIds") || [];
     previousActorIds.push(this._id);
-    foundry.utils.setProperty(d.flags, "dnd5e.previousActorIds", previousActorIds);
+    foundry.utils.setProperty(d.flags, "mojo.previousActorIds", previousActorIds);
 
     // Update unlinked Tokens, and grab a copy of any actorData adjustments to re-apply
     if ( this.isToken ) {
       const tokenData = d.prototypeToken;
       delete d.prototypeToken;
       tokenData.actorData = d;
-      setProperty(tokenData, "flags.dnd5e.previousActorData", this.token.toObject().actorData);
+      setProperty(tokenData, "flags.mojo.previousActorData", this.token.toObject().actorData);
       await this.sheet?.close();
       const update = await this.token.update(tokenData);
       if ( renderSheet ) this.sheet?.render(true);
@@ -2398,7 +2398,7 @@ export default class Actor5e extends Actor {
 
     /**
      * A hook event that fires just before the actor is transformed.
-     * @function dnd5e.transformActor
+     * @function mojo.transformActor
      * @memberof hookEvents
      * @param {Actor5e} actor                  The original actor before transformation.
      * @param {Actor5e} target                 The target actor into which to transform.
@@ -2406,7 +2406,7 @@ export default class Actor5e extends Actor {
      * @param {TransformationOptions} options  Options that determine how the transformation is performed.
      * @param {object} [options]
      */
-    Hooks.callAll("dnd5e.transformActor", this, target, d, {
+    Hooks.callAll("mojo.transformActor", this, target, d, {
       keepPhysical, keepMental, keepSaves, keepSkills, mergeSaves, mergeSkills, keepClass, keepFeats, keepSpells,
       keepItems, keepBio, keepVision, keepSelf, keepAE, keepOriginAE, keepOtherOriginAE, keepSpellAE,
       keepEquipmentAE, keepFeatAE, keepClassAE, keepBackgroundAE, transformTokens
@@ -2424,9 +2424,9 @@ export default class Actor5e extends Actor {
       newTokenData.actorId = newActor.id;
       newTokenData.actorLink = true;
 
-      const dOriginalActor = foundry.utils.getProperty(d, "flags.dnd5e.originalActor");
-      foundry.utils.setProperty(newTokenData, "flags.dnd5e.originalActor", dOriginalActor);
-      foundry.utils.setProperty(newTokenData, "flags.dnd5e.isPolymorphed", true);
+      const dOriginalActor = foundry.utils.getProperty(d, "flags.mojo.originalActor");
+      foundry.utils.setProperty(newTokenData, "flags.mojo.originalActor", dOriginalActor);
+      foundry.utils.setProperty(newTokenData, "flags.mojo.isPolymorphed", true);
       return newTokenData;
     });
     return canvas.scene?.updateEmbeddedDocuments("Token", updates);
@@ -2444,34 +2444,34 @@ export default class Actor5e extends Actor {
    */
   async revertOriginalForm({renderSheet=true}={}) {
     if ( !this.isPolymorphed ) return;
-    if ( !this.isOwner ) return ui.notifications.warn(game.i18n.localize("DND5E.PolymorphRevertWarn"));
+    if ( !this.isOwner ) return ui.notifications.warn(game.i18n.localize("MOJO.PolymorphRevertWarn"));
 
     /**
      * A hook event that fires just before the actor is reverted to original form.
-     * @function dnd5e.revertOriginalForm
+     * @function mojo.revertOriginalForm
      * @memberof hookEvents
      * @param {Actor} this                 The original actor before transformation.
      * @param {object} [options]
      */
-    Hooks.callAll("dnd5e.revertOriginalForm", this, {renderSheet});
-    const previousActorIds = this.getFlag("dnd5e", "previousActorIds") ?? [];
+    Hooks.callAll("mojo.revertOriginalForm", this, {renderSheet});
+    const previousActorIds = this.getFlag("mojo", "previousActorIds") ?? [];
     const isOriginalActor = !previousActorIds.length;
     const isRendered = this.sheet.rendered;
 
     // Obtain a reference to the original actor
-    const original = game.actors.get(this.getFlag("dnd5e", "originalActor"));
+    const original = game.actors.get(this.getFlag("mojo", "originalActor"));
 
     // If we are reverting an unlinked token, grab the previous actorData, and create a new token
     if ( this.isToken ) {
       const baseActor = original ? original : game.actors.get(this.token.actorId);
       if ( !baseActor ) {
-        ui.notifications.warn(game.i18n.format("DND5E.PolymorphRevertNoOriginalActorWarn", {
-          reference: this.getFlag("dnd5e", "originalActor")
+        ui.notifications.warn(game.i18n.format("MOJO.PolymorphRevertNoOriginalActorWarn", {
+          reference: this.getFlag("mojo", "originalActor")
         }));
         return;
       }
       const prototypeTokenData = await baseActor.getTokenDocument();
-      const actorData = this.token.getFlag("dnd5e", "previousActorData");
+      const actorData = this.token.getFlag("mojo", "previousActorData");
       const tokenUpdate = this.token.toObject();
       tokenUpdate.actorData = actorData ? actorData : {};
 
@@ -2490,17 +2490,17 @@ export default class Actor5e extends Actor {
         parent: canvas.scene, keepId: true, render: true
       });
       if ( isOriginalActor ) {
-        await this.unsetFlag("dnd5e", "isPolymorphed");
-        await this.unsetFlag("dnd5e", "previousActorIds");
-        await this.token.unsetFlag("dnd5e", "previousActorData");
+        await this.unsetFlag("mojo", "isPolymorphed");
+        await this.unsetFlag("mojo", "previousActorIds");
+        await this.token.unsetFlag("mojo", "previousActorData");
       }
       if ( isRendered && renderSheet ) token.actor?.sheet?.render(true);
       return token;
     }
 
     if ( !original ) {
-      ui.notifications.warn(game.i18n.format("DND5E.PolymorphRevertNoOriginalActorWarn", {
-        reference: this.getFlag("dnd5e", "originalActor")
+      ui.notifications.warn(game.i18n.format("MOJO.PolymorphRevertNoOriginalActorWarn", {
+        reference: this.getFlag("mojo", "originalActor")
       }));
       return;
     }
@@ -2519,8 +2519,8 @@ export default class Actor5e extends Actor {
       await canvas.scene.updateEmbeddedDocuments("Token", tokenUpdates);
     }
     if ( isOriginalActor ) {
-      await this.unsetFlag("dnd5e", "isPolymorphed");
-      await this.unsetFlag("dnd5e", "previousActorIds");
+      await this.unsetFlag("mojo", "isPolymorphed");
+      await this.unsetFlag("mojo", "previousActorIds");
     }
 
     // Delete the polymorphed version(s) of the actor, if possible
@@ -2547,14 +2547,14 @@ export default class Actor5e extends Actor {
    */
   static addDirectoryContextOptions(html, entryOptions) {
     entryOptions.push({
-      name: "DND5E.PolymorphRestoreTransformation",
+      name: "MOJO.PolymorphRestoreTransformation",
       icon: '<i class="fas fa-backward"></i>',
       callback: li => {
         const actor = game.actors.get(li.data("documentId"));
         return actor.revertOriginalForm();
       },
       condition: li => {
-        const allowed = game.settings.get("dnd5e", "allowPolymorphing");
+        const allowed = game.settings.get("mojo", "allowPolymorphing");
         if ( !allowed && !game.user.isGM ) return false;
         const actor = game.actors.get(li.data("documentId"));
         return actor && actor.isPolymorphed;
@@ -2575,13 +2575,13 @@ export default class Actor5e extends Actor {
     if ( typeData.value === "custom" ) {
       localizedType = typeData.custom;
     } else {
-      let code = CONFIG.DND5E.creatureTypes[typeData.value];
+      let code = CONFIG.MOJO.creatureTypes[typeData.value];
       localizedType = game.i18n.localize(typeData.swarm ? `${code}Pl` : code);
     }
     let type = localizedType;
     if ( typeData.swarm ) {
-      type = game.i18n.format("DND5E.CreatureSwarmPhrase", {
-        size: game.i18n.localize(CONFIG.DND5E.actorSizes[typeData.swarm]),
+      type = game.i18n.format("MOJO.CreatureSwarmPhrase", {
+        size: game.i18n.localize(CONFIG.MOJO.actorSizes[typeData.swarm]),
         type: localizedType
       });
     }
@@ -2616,7 +2616,7 @@ export default class Actor5e extends Actor {
       canvas.interface.createScrollingText(t.center, dhp.signedString(), {
         anchor: CONST.TEXT_ANCHOR_POINTS.TOP,
         fontSize: 16 + (32 * pct), // Range between [16, 48]
-        fill: CONFIG.DND5E.tokenHPColors[dhp < 0 ? "damage" : "healing"],
+        fill: CONFIG.MOJO.tokenHPColors[dhp < 0 ? "damage" : "healing"],
         stroke: 0x000000,
         strokeThickness: 4,
         jitter: 0.25
@@ -2632,12 +2632,12 @@ export default class Actor5e extends Actor {
    * Determine a character's AC value from their equipped armor and shield.
    * @returns {object}
    * @private
-   * @deprecated since dnd5e 2.0, targeted for removal in 2.2
+   * @deprecated since mojo 2.0, targeted for removal in 2.2
    */
   _computeArmorClass() {
     foundry.utils.logCompatibilityWarning(
       "Actor5e#_computeArmorClass has been renamed Actor5e#_prepareArmorClass.",
-      { since: "DnD5e 2.0", until: "DnD5e 2.2" }
+      { since: "Mojo 2.0", until: "Mojo 2.2" }
     );
     this._prepareArmorClass();
     return this.system.attributes.ac;
@@ -2649,12 +2649,12 @@ export default class Actor5e extends Actor {
    * Compute the level and percentage of encumbrance for an Actor.
    * @returns {object}  An object describing the character's encumbrance level
    * @private
-   * @deprecated since dnd5e 2.0, targeted for removal in 2.2
+   * @deprecated since mojo 2.0, targeted for removal in 2.2
    */
   _computeEncumbrance() {
     foundry.utils.logCompatibilityWarning(
       "Actor5e#_computeEncumbrance has been renamed Actor5e#_prepareEncumbrance.",
-      { since: "DnD5e 2.0", until: "DnD5e 2.2" }
+      { since: "Mojo 2.0", until: "Mojo 2.2" }
     );
     this._prepareEncumbrance();
     return this.system.attributes.encumbrance;
@@ -2665,12 +2665,12 @@ export default class Actor5e extends Actor {
   /**
    * Calculate the initiative bonus to display on a character sheet.
    * @private
-   * @deprecated since dnd5e 2.0, targeted for removal in 2.2
+   * @deprecated since mojo 2.0, targeted for removal in 2.2
    */
   _computeInitiativeModifier() {
     foundry.utils.logCompatibilityWarning(
       "Actor5e#_computeInitiativeModifier has been renamed Actor5e#_prepareInitiative.",
-      { since: "DnD5e 2.0", until: "DnD5e 2.2" }
+      { since: "Mojo 2.0", until: "Mojo 2.2" }
     );
     this._prepareInitiative();
   }
@@ -2681,12 +2681,12 @@ export default class Actor5e extends Actor {
    * Prepare data related to the spell-casting capabilities of the Actor.
    * Mutates the value of the system.spells object.
    * @private
-   * @deprecated since dnd5e 2.0, targeted for removal in 2.2
+   * @deprecated since mojo 2.0, targeted for removal in 2.2
    */
   _computeSpellcastingProgression() {
     foundry.utils.logCompatibilityWarning(
       "Actor5e#_computeSpellcastingProgression has been renamed Actor5e#_prepareSpellcasting.",
-      { since: "DnD5e 2.0", until: "DnD5e 2.2" }
+      { since: "Mojo 2.0", until: "Mojo 2.2" }
     );
     this._prepareSpellcasting();
   }
@@ -2699,12 +2699,12 @@ export default class Actor5e extends Actor {
    * @param {object} data               Actor data to use for replacing @ strings.
    * @returns {number}                  Simplified bonus as an integer.
    * @protected
-   * @deprecated since dnd5e 2.0, targeted for removal in 2.2
+   * @deprecated since mojo 2.0, targeted for removal in 2.2
    */
   _simplifyBonus(bonus, data) {
     foundry.utils.logCompatibilityWarning(
-      "Actor#_simplifyBonus has been made a utility function and can be accessed at dnd5e.utils.simplifyBonus.",
-      { since: "DnD5e 2.0", until: "DnD5e 2.2" }
+      "Actor#_simplifyBonus has been made a utility function and can be accessed at mojo.utils.simplifyBonus.",
+      { since: "Mojo 2.0", until: "Mojo 2.2" }
     );
     return simplifyBonus(bonus, data);
   }

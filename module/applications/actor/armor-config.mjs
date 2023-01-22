@@ -17,8 +17,8 @@ export default class ActorArmorConfig extends DocumentSheet {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "actor-armor-config"],
-      template: "systems/dnd5e/templates/apps/actor-armor.hbs",
+      classes: ["mojo", "actor-armor-config"],
+      template: "systems/mojo/templates/apps/actor-armor.hbs",
       width: 320,
       height: "auto",
       sheetConfig: false
@@ -29,7 +29,7 @@ export default class ActorArmorConfig extends DocumentSheet {
 
   /** @inheritdoc */
   get title() {
-    return `${game.i18n.localize("DND5E.ArmorConfig")}: ${this.document.name}`;
+    return `${game.i18n.localize("MOJO.ArmorConfig")}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -40,16 +40,16 @@ export default class ActorArmorConfig extends DocumentSheet {
     const isFlat = ["flat", "natural"].includes(ac.calc);
 
     // Get configuration data for the calculation mode, reset to flat if configuration is unavailable
-    let cfg = CONFIG.DND5E.armorClasses[ac.calc];
+    let cfg = CONFIG.MOJO.armorClasses[ac.calc];
     if ( !cfg ) {
       ac.calc = "flat";
-      cfg = CONFIG.DND5E.armorClasses.flat;
+      cfg = CONFIG.MOJO.armorClasses.flat;
       this.clone.updateSource({ "system.attributes.ac.calc": "flat" });
     }
 
     return {
       ac, isFlat,
-      calculations: CONFIG.DND5E.armorClasses,
+      calculations: CONFIG.MOJO.armorClasses,
       valueDisabled: !isFlat,
       formula: ac.calc === "custom" ? ac.formula : cfg.formula,
       formulaDisabled: ac.calc !== "custom"
